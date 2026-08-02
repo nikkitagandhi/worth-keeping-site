@@ -1,18 +1,21 @@
-# Temporary "coming soon" gate.
-# Cloudflare evaluates these top-to-bottom and stops at the first match,
-# so everything the coming-soon page itself needs must be excluded above
-# the catch-all, or it would 302 right along with everything else.
+# Temporary "coming soon" gate. Every URL on the domain serves the
+# coming-soon content while keeping its own address bar URL (status 200 =
+# rewrite, not a redirect) — so worthkeeping.info shows it directly, not
+# worthkeeping.info/coming-soon.
 #
-# Status 200 = rewrite: serve that content, URL stays put, no redirect issued.
-# Status 302 = temporary redirect.
-# Destinations must be the clean URL (e.g. /coming-soon/), never a literal
-# *.html file path — Cloudflare's asset server auto-strips "index.html" and
-# redirects to the directory form, which fights a rule pointing at the file
-# and produces its own infinite-loop error at deploy time.
-
-/coming-soon             /coming-soon/             200
-/coming-soon/            /coming-soon/             200
-/coming-soon/*           /coming-soon/             200
+# The destination is a flat top-level file (coming-soon.html), not a
+# folder. A folder (e.g. /coming-soon/, backed by index.html) is subject to
+# Cloudflare's own directory<->index.html canonicalization, and any rule
+# that points at it — in either form — gets flagged by Wrangler's deploy-time
+# loop detector as feeding back into itself. A flat file has no such
+# ambiguity, so it's immune to that check. This matches Cloudflare's own
+# documented maintenance-mode pattern (/* /maintenance.html 200).
+#
+# These specific-path rules must stay above the catch-all: Cloudflare
+# evaluates rules top-to-bottom and stops at the first match, so anything
+# the coming-soon page itself loads (its own CSS/JS/images) needs to be
+# excluded here or it would get swept into the rewrite too and come back
+# as HTML instead of CSS/JS/images.
 
 /styles.css              /styles.css               200
 /script.js               /script.js                200
@@ -20,4 +23,4 @@
 /sitemap.xml             /sitemap.xml              200
 /assets/*                /assets/:splat            200
 
-/*                       /coming-soon/              302
+/*                       /coming-soon.html          200

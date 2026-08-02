@@ -7,12 +7,6 @@
   </url>
 
   <url>
-    <loc>https://worthkeeping.info/coming-soon/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://worthkeeping.info/story/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
