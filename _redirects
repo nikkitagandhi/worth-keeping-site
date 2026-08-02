@@ -1,1 +1,19 @@
-/*  /coming-soon/  302
+# Temporary "coming soon" gate.
+# Cloudflare evaluates these top-to-bottom and stops at the first match,
+# so everything the coming-soon page itself needs must be excluded above
+# the catch-all, or it would 302 right along with everything else.
+#
+# Status 200 = rewrite: serve that content, URL stays put, no redirect issued.
+# Status 302 = temporary redirect.
+
+/coming-soon             /coming-soon/index.html   200
+/coming-soon/            /coming-soon/index.html   200
+/coming-soon/*           /coming-soon/index.html   200
+
+/styles.css              /styles.css               200
+/script.js               /script.js                200
+/robots.txt              /robots.txt               200
+/sitemap.xml             /sitemap.xml              200
+/assets/*                /assets/:splat            200
+
+/*                       /coming-soon/              302
