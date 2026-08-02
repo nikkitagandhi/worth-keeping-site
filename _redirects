@@ -22,11 +22,20 @@
 # the coming-soon page itself loads (its own CSS/JS/images) needs to be
 # excluded here or it would get swept into the rewrite too and come back
 # as HTML instead of CSS/JS/images.
+#
+# Listed explicitly rather than as a /assets/* splat: the splat form
+# (/assets/* -> /assets/:splat) deployed without error but didn't reliably
+# exclude assets at runtime — favicon.svg and og-image.jpg were still
+# coming back as the coming-soon HTML. Exact-path rules are what's actually
+# verified working (via curl against the live deployment) for every other
+# passthrough here, so asset exceptions use the same proven pattern. Add a
+# new line here if the coming-soon page ever references another local file.
 
 /styles.css              /styles.css               200
 /script.js               /script.js                200
 /robots.txt              /robots.txt               200
 /sitemap.xml             /sitemap.xml              200
-/assets/*                /assets/:splat            200
+/assets/favicon.svg      /assets/favicon.svg       200
+/assets/og-image.jpg     /assets/og-image.jpg      200
 
 /*                       /coming-soon                200
