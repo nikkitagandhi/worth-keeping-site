@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# AI answer-engine and research crawlers — explicitly welcomed.
+# Worth Keeping is built to be cited: text lives on the page, not trapped in images.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://worthkeeping.info/sitemap.xml
