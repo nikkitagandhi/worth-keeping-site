@@ -5,10 +5,14 @@
 #
 # Status 200 = rewrite: serve that content, URL stays put, no redirect issued.
 # Status 302 = temporary redirect.
+# Destinations must be the clean URL (e.g. /coming-soon/), never a literal
+# *.html file path — Cloudflare's asset server auto-strips "index.html" and
+# redirects to the directory form, which fights a rule pointing at the file
+# and produces its own infinite-loop error at deploy time.
 
-/coming-soon             /coming-soon/index.html   200
-/coming-soon/            /coming-soon/index.html   200
-/coming-soon/*           /coming-soon/index.html   200
+/coming-soon             /coming-soon/             200
+/coming-soon/            /coming-soon/             200
+/coming-soon/*           /coming-soon/             200
 
 /styles.css              /styles.css               200
 /script.js               /script.js                200
