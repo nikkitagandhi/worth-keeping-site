@@ -3,13 +3,19 @@
 # rewrite, not a redirect) — so worthkeeping.info shows it directly, not
 # worthkeeping.info/coming-soon.
 #
-# The destination is a flat top-level file (coming-soon.html), not a
-# folder. A folder (e.g. /coming-soon/, backed by index.html) is subject to
-# Cloudflare's own directory<->index.html canonicalization, and any rule
-# that points at it — in either form — gets flagged by Wrangler's deploy-time
-# loop detector as feeding back into itself. A flat file has no such
-# ambiguity, so it's immune to that check. This matches Cloudflare's own
-# documented maintenance-mode pattern (/* /maintenance.html 200).
+# The underlying file is a flat top-level file (coming-soon.html), not a
+# folder — folders (e.g. /coming-soon/, backed by index.html) are subject to
+# Cloudflare's directory<->index.html canonicalization, which made every
+# version of that rule look self-referential to Wrangler's deploy-time
+# loop detector.
+#
+# The destination below is the extension-less clean URL (/coming-soon), NOT
+# /coming-soon.html. Cloudflare's asset server also auto-redirects requests
+# for the literal *.html file to its clean-URL form — pointing the rewrite
+# at the .html path triggered that redirect on every request, straight back
+# into this same catch-all, live at runtime (visible as endless 307s to
+# /coming-soon, confirmed via curl). Pointing at the already-canonical
+# /coming-soon avoids that extra hop entirely.
 #
 # These specific-path rules must stay above the catch-all: Cloudflare
 # evaluates rules top-to-bottom and stops at the first match, so anything
@@ -23,4 +29,4 @@
 /sitemap.xml             /sitemap.xml              200
 /assets/*                /assets/:splat            200
 
-/*                       /coming-soon.html          200
+/*                       /coming-soon                200
