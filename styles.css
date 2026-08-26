@@ -1182,7 +1182,8 @@ img { max-width: 100%; display: block; }
   .prop--photo-a, .prop--photo-b, .prop--photo-c { display: none; }
 
   .panel-plate { aspect-ratio: 4/3; }
-  .interlude-plate, .closing-plate { aspect-ratio: 4/3; }
+  .interlude-plate { aspect-ratio: 4/3; }
+  /* closing-plate keeps its base 4:5 portrait frame for begin.jpg */
   .foliage { width: 100vw; height: 460px; opacity: .16; }
 
   .editorial-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1243,14 +1244,14 @@ img { max-width: 100%; display: block; }
    fluid clamp() above untouched. line-height stays unitless in the base rules,
    so it scales proportionally with these font-size overrides automatically. */
 @media (min-width: 901px) {
-  /* Homepage hero title ("Worth Keeping") — ~20% smaller */
-  .hero-title { font-size: clamp(51px, 12.4vw, 152px); }
-
-  /* Category page h1 (e.g. "Objects Worth Keeping") — ~35% smaller */
-  .category-hero h1.display { font-size: clamp(30px, 5.85vw, 68px); }
-
-  /* Entry page h1 (e.g. "Goyard Never Advertises...") — ~45% smaller */
-  .entry-head h1.display { font-size: clamp(25px, 4.95vw, 57px); }
+  /* Desktop heading scale — reduced a further ~15% on top of the earlier
+     cuts (mobile keeps the original clamp minimums untouched). */
+  .hero-title { font-size: clamp(43px, 10.5vw, 129px); }        /* Worth Keeping */
+  .category-hero h1.display { font-size: clamp(26px, 4.97vw, 58px); }
+  .entry-head h1.display { font-size: clamp(21px, 4.2vw, 48px); }
+  .display { font-size: clamp(39px, 5.6vw, 68px); }              /* manifesto/about/closing/footer */
+  .display--md { font-size: clamp(32px, 5.5vw, 58px); }          /* "Latest", "The Collection" */
+  .display--sm { font-size: clamp(23px, 2.9vw, 34px); }          /* panel sub-heads */
 
   /* Entry hero was 1100px wide on desktop, rendering ~1100x690 — too
      dominant on big screens (mobile is unaffected by this cap, so it stays
@@ -1261,11 +1262,6 @@ img { max-width: 100%; display: block; }
   /* ---- Homepage: read as oversized on wide screens. Contain the big
      headings and photography on desktop only; everything below 901px
      (mobile + tablet) keeps the original larger, full-bleed scale. ---- */
-
-  /* Big display headings (manifesto, about, closing, footer) capped ~80px
-     instead of ~104px. The hero title and category/entry h1s keep their
-     own overrides above. */
-  .display { font-size: clamp(46px, 6.6vw, 80px); }
 
   /* Full-width desk band under the hero — shorter. */
   .hero-plate { height: clamp(320px, 42vh, 440px); }
@@ -1281,10 +1277,12 @@ img { max-width: 100%; display: block; }
   .panel-plate { aspect-ratio: auto; }
   .panel-copy { padding: 60px clamp(48px, 5vw, 72px); }
 
-  /* Tall half-width photos in the Questions band and the closing section —
-     shorter and less dominant. */
+  /* Questions band photo (landscape) — shorter, less dominant. */
   .interlude-plate { aspect-ratio: 4/3; max-height: 440px; }
-  .closing-plate { aspect-ratio: 4/3; max-height: 440px; }
+
+  /* Closing photo (begin.jpg) is portrait, so keep the base 4:5 frame but
+     cap the height so it stays contained on desktop. */
+  .closing-plate { max-height: 560px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
