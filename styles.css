@@ -1251,6 +1251,12 @@ img { max-width: 100%; display: block; }
 
   /* Entry page h1 (e.g. "Goyard Never Advertises...") — ~45% smaller */
   .entry-head h1.display { font-size: clamp(25px, 4.95vw, 57px); }
+
+  /* Entry hero was 1100px wide on desktop, rendering ~1100x690 — too
+     dominant on big screens (mobile is unaffected by this cap, so it stays
+     as-is). Cap it just past the 780px reading column for a contained,
+     editorial feel. Adjust this one value to taste. */
+  .entry-hero { max-width: 820px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
