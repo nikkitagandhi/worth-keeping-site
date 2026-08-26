@@ -1,41 +1,18 @@
-# Temporary "coming soon" gate. Every URL on the domain serves the
-# coming-soon content while keeping its own address bar URL (status 200 =
-# rewrite, not a redirect) — so worthkeeping.info shows it directly, not
-# worthkeeping.info/coming-soon.
+# Site is live — the temporary "coming soon" gate has been removed.
 #
-# The underlying file is a flat top-level file (coming-soon.html), not a
-# folder — folders (e.g. /coming-soon/, backed by index.html) are subject to
-# Cloudflare's directory<->index.html canonicalization, which made every
-# version of that rule look self-referential to Wrangler's deploy-time
-# loop detector.
+# There are intentionally no rules here now: every path serves its own
+# file directly (the homepage at /, entries at /category/slug/, assets
+# under /assets/, etc.), which is Cloudflare's default behavior for a
+# static-asset Worker.
 #
-# The destination below is the extension-less clean URL (/coming-soon), NOT
-# /coming-soon.html. Cloudflare's asset server also auto-redirects requests
-# for the literal *.html file to its clean-URL form — pointing the rewrite
-# at the .html path triggered that redirect on every request, straight back
-# into this same catch-all, live at runtime (visible as endless 307s to
-# /coming-soon, confirmed via curl). Pointing at the already-canonical
-# /coming-soon avoids that extra hop entirely.
+# The old coming-soon gate rewrote every URL to /coming-soon while the
+# rest of the site was hidden before launch. To re-enable a gate later,
+# restore a catch-all rewrite as the LAST rule, e.g.:
+#   /*   /coming-soon   200
+# with exact-path 200 passthroughs ABOVE it for every asset the gate
+# page itself loads (styles.css, script.js, favicon, images), since
+# Cloudflare stops at the first matching rule. See git history for the
+# full working version.
 #
-# These specific-path rules must stay above the catch-all: Cloudflare
-# evaluates rules top-to-bottom and stops at the first match, so anything
-# the coming-soon page itself loads (its own CSS/JS/images) needs to be
-# excluded here or it would get swept into the rewrite too and come back
-# as HTML instead of CSS/JS/images.
-#
-# Listed explicitly rather than as a /assets/* splat: the splat form
-# (/assets/* -> /assets/:splat) deployed without error but didn't reliably
-# exclude assets at runtime — favicon.svg and og-image.jpg were still
-# coming back as the coming-soon HTML. Exact-path rules are what's actually
-# verified working (via curl against the live deployment) for every other
-# passthrough here, so asset exceptions use the same proven pattern. Add a
-# new line here if the coming-soon page ever references another local file.
-
-/styles.css              /styles.css               200
-/script.js               /script.js                200
-/robots.txt              /robots.txt               200
-/sitemap.xml             /sitemap.xml              200
-/assets/favicon.svg      /assets/favicon.svg       200
-/assets/og-image.jpg     /assets/og-image.jpg      200
-
-/*                       /coming-soon                200
+# coming-soon.html is left in place (unlinked) so the gate can be
+# restored without rebuilding it.
