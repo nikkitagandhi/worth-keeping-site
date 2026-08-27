@@ -463,7 +463,7 @@ img { max-width: 100%; display: block; }
 .hero-inner { position: relative; z-index: 4; text-align: center; max-width: 720px; }
 
 /* Reference-style hero: photo panels bleed off both edges into the cream page. */
-.hero-edge { position: absolute; top: 0; bottom: 0; z-index: 3; overflow: hidden; pointer-events: none; }
+.hero-edge { position: absolute; top: 0; bottom: 0; margin: 0; z-index: 3; overflow: hidden; pointer-events: none; }
 .hero-edge img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-edge::after { content: ""; position: absolute; inset: 0; }
 
@@ -1332,22 +1332,22 @@ img { max-width: 100%; display: block; }
 
 /* Reference-style hero on phones/tablets: the right-hand photo (letters, key,
    sepia print) becomes a full-width banner at the top that fades into the cream,
-   with the centred text below it. The left book panel is hidden. */
+   with the centred text below it. The left book panel is hidden. The frame turns
+   into a flex column and the right panel goes back into normal flow (position
+   relative, so its ::after fade stays inside it) — this lets it sit flush at the
+   top full-bleed, with the text pulled up to overlap its faded lower edge. */
 @media (max-width: 900px) {
-  .hero-frame { display: block; min-height: auto; padding: 88px 24px 60px; }
+  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: auto; padding: 0 0 54px; }
   .hero-edge--left { display: none; }
-  .hero-edge--right {
-    top: 0; left: 0; right: 0; bottom: auto;
-    width: 100%; height: 42vh;
-  }
-  .hero-edge--right img { object-position: center 34%; }
-  .hero-edge--right::after { background: linear-gradient(180deg, transparent 32%, var(--paper) 90%); }
-  .hero-inner { margin: 30vh auto 0; max-width: 560px; }
+  .hero-edge--right { position: relative; top: auto; bottom: auto; width: 100%; height: auto; }
+  .hero-edge--right img { width: 100%; height: 40vh; object-fit: cover; object-position: center 34%; }
+  .hero-edge--right::after { background: linear-gradient(180deg, transparent 30%, var(--paper) 94%); }
+  .hero-inner { margin: -9vh auto 0; max-width: 560px; padding: 0 26px; }
 }
 
 @media (max-width: 560px) {
-  .hero-edge--right { height: 38vh; }
-  .hero-inner { margin-top: 27vh; }
+  .hero-edge--right img { height: 37vh; }
+  .hero-inner { margin-top: -8vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
