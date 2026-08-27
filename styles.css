@@ -1308,6 +1308,7 @@ img { max-width: 100%; display: block; }
      the section padding and internal spacing so the whole thing — down to
      "THE ONES THAT LEAVE SOMETHING BEHIND" — fits one screen. */
   .spread--manifesto { padding-top: 70px; padding-bottom: 70px; }
+  .spread--manifesto .display { font-size: clamp(44px, 6vw, 90px); } /* the tall 3-line heading, trimmed to help it fit */
   .spread--manifesto .rule--left { margin-top: 22px; margin-bottom: 22px; }
   .spread--manifesto .body { margin-bottom: 14px; }
   .spread--manifesto .caption { margin-top: 22px; }
