@@ -12,3 +12,6 @@ node_modules
 # .jpg; the .png masters (~94 MB) are kept in the repo but never served.
 # (assets/thoughtful.png lives outside this folder and IS used, so it stays.)
 assets/photos/*.png
+
+# Stray source original with spaces in its name (ships as about-curator.jpg).
+assets/photos/about the curator.jpg
