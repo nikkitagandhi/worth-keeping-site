@@ -7,3 +7,8 @@ wrangler.jsonc
 wrangler.toml
 node_modules
 *.md
+
+# Unused source originals: every photo in assets/photos/ ships as an optimized
+# .jpg; the .png masters (~94 MB) are kept in the repo but never served.
+# (assets/thoughtful.png lives outside this folder and IS used, so it stays.)
+assets/photos/*.png
