@@ -1143,6 +1143,52 @@ img { max-width: 100%; display: block; }
 .entry-related-list a:hover { color: var(--seal); padding-left: 8px; }
 
 /* ============================================================
+   ARCHIVE SIGNATURE — accession numbering + reading refinements.
+   Amplifies the catalogue motif already in the nav (roman numerals)
+   and the question cards ("No. 03") across the listing grids and the
+   long-form entries. Pure CSS: no per-page markup, easy to revert.
+   ============================================================ */
+
+/* --- Listing cards: auto-numbered like an archive, livelier on hover --- */
+.editorial-grid { counter-reset: acc; }
+.grid-card { counter-increment: acc; }
+
+/* Kicker becomes a catalogue line: "01 · DISCOVERY" */
+.grid-card-kicker::before {
+  content: counter(acc, decimal-leading-zero) "  ·  ";
+  color: var(--archive);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Photo answers the cursor: a slow zoom held inside the frame. */
+.grid-card-plate { overflow: hidden; }
+.grid-card-plate img { transition: transform 900ms cubic-bezier(.19,.7,.2,1); will-change: transform; }
+.grid-card:hover .grid-card-plate img { transform: scale(1.045); }
+
+/* A hairline draws in under the title on hover. */
+.grid-card-title { position: relative; padding-bottom: 12px; }
+.grid-card-title::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 0; height: 1px; background: var(--seal);
+  transition: width 520ms cubic-bezier(.19,.7,.2,1);
+}
+.grid-card:hover .grid-card-title::after { width: 44px; }
+
+/* --- Entry prose: a literary drop cap and a little more air --- */
+.entry-body p { font-size: clamp(17px, 1.1vw, 18.5px); line-height: 1.82; }
+.entry-body h2 { margin-top: 50px; }
+.entry-body h2:first-child { margin-top: 0; }
+
+.entry-body > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--serif);
+  font-size: 3.9em;
+  line-height: 0.76;
+  padding: 6px 14px 0 0;
+  color: var(--seal);
+}
+
+/* ============================================================
    SCROLL REVEAL
    ============================================================ */
 
