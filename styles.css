@@ -1302,6 +1302,16 @@ img { max-width: 100%; display: block; }
 
   /* Closing photo (begin.jpg, portrait) — keep 4:5, height-capped. */
   .closing-plate { max-height: 560px; }
+
+  /* "What deserves to last?" manifesto ran ~90px past one screen (135px
+     top+bottom padding + a tall copy column). Keep the big heading but trim
+     the section padding and internal spacing so the whole thing — down to
+     "THE ONES THAT LEAVE SOMETHING BEHIND" — fits one screen. */
+  .spread--manifesto { padding-top: 70px; padding-bottom: 70px; }
+  .spread--manifesto .rule--left { margin-top: 22px; margin-bottom: 22px; }
+  .spread--manifesto .body { margin-bottom: 14px; }
+  .spread--manifesto .caption { margin-top: 22px; }
+  .collage--manifesto { min-height: 560px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
