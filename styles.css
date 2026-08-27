@@ -457,8 +457,23 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   padding: 130px var(--gut) 90px;
+  overflow: hidden;
+  background: var(--paper);
 }
-.hero-inner { position: relative; z-index: 4; text-align: center; max-width: 760px; }
+.hero-inner { position: relative; z-index: 4; text-align: center; max-width: 720px; }
+
+/* Reference-style hero: photo panels bleed off both edges into the cream page. */
+.hero-edge { position: absolute; top: 0; bottom: 0; z-index: 3; overflow: hidden; pointer-events: none; }
+.hero-edge img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-edge::after { content: ""; position: absolute; inset: 0; }
+
+.hero-edge--left { left: 0; width: clamp(140px, 22vw, 360px); }
+.hero-edge--left img { object-position: 62% center; }
+.hero-edge--left::after { background: linear-gradient(90deg, transparent 42%, var(--paper) 97%); }
+
+.hero-edge--right { right: 0; width: clamp(160px, 26vw, 420px); }
+.hero-edge--right img { object-position: 42% center; }
+.hero-edge--right::after { background: linear-gradient(270deg, transparent 42%, var(--paper) 97%); }
 
 .hero-title {
   font-family: var(--serif);
@@ -1313,6 +1328,26 @@ img { max-width: 100%; display: block; }
   .spread--manifesto .body { margin-bottom: 14px; }
   .spread--manifesto .caption { margin-top: 22px; }
   .collage--manifesto { min-height: 560px; }
+}
+
+/* Reference-style hero on phones/tablets: the right-hand photo (letters, key,
+   sepia print) becomes a full-width banner at the top that fades into the cream,
+   with the centred text below it. The left book panel is hidden. */
+@media (max-width: 900px) {
+  .hero-frame { display: block; min-height: auto; padding: 88px 24px 60px; }
+  .hero-edge--left { display: none; }
+  .hero-edge--right {
+    top: 0; left: 0; right: 0; bottom: auto;
+    width: 100%; height: 42vh;
+  }
+  .hero-edge--right img { object-position: center 34%; }
+  .hero-edge--right::after { background: linear-gradient(180deg, transparent 32%, var(--paper) 90%); }
+  .hero-inner { margin: 30vh auto 0; max-width: 560px; }
+}
+
+@media (max-width: 560px) {
+  .hero-edge--right { height: 38vh; }
+  .hero-inner { margin-top: 27vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
