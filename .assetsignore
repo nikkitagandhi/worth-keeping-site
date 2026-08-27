@@ -15,3 +15,6 @@ assets/photos/*.png
 
 # Stray source original with spaces in its name (ships as about-curator.jpg).
 assets/photos/about the curator.jpg
+
+# Replaced by the far smaller thoughtful.jpg (2.35 MB PNG no longer served).
+assets/thoughtful.png
