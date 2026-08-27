@@ -1244,44 +1244,58 @@ img { max-width: 100%; display: block; }
    fluid clamp() above untouched. line-height stays unitless in the base rules,
    so it scales proportionally with these font-size overrides automatically. */
 @media (min-width: 901px) {
-  /* Desktop heading scale — reduced a further ~15% on top of the earlier
-     cuts (mobile keeps the original clamp minimums untouched). */
-  .hero-title { font-size: clamp(43px, 10.5vw, 129px); }        /* Worth Keeping */
+  /* ---- Homepage typographic scale (per the PDF notes): headings + copy had
+     been shrunk too far. Restore the homepage headings to their original
+     larger size, enlarge the hero sub-line, CTAs, body and Collection links,
+     then balance the photography against them below. Mobile (<901px) keeps
+     its own smaller clamp minimums untouched. ---- */
+
+  /* Hero wordmark — big, but capped so the hero still fits one screen. */
+  .hero-title { font-size: clamp(54px, 11vw, 144px); }
+
+  /* Category / entry h1s keep their trimmed overrides (not flagged). */
   .category-hero h1.display { font-size: clamp(26px, 4.97vw, 58px); }
   .entry-head h1.display { font-size: clamp(21px, 4.2vw, 48px); }
-  .display { font-size: clamp(39px, 5.6vw, 68px); }              /* manifesto/about/closing/footer */
-  .display--md { font-size: clamp(32px, 5.5vw, 58px); }          /* "Latest", "The Collection" */
-  .display--sm { font-size: clamp(23px, 2.9vw, 34px); }          /* panel sub-heads */
+  /* .display / --md / --sm intentionally have NO override here, so the
+     homepage section headings return to their original 104 / 68 / 40px. */
 
-  /* Entry hero was 1100px wide on desktop, rendering ~1100x690 — too
-     dominant on big screens (mobile is unaffected by this cap, so it stays
-     as-is). Cap it just past the 780px reading column for a contained,
-     editorial feel. Adjust this one value to taste. */
+  /* Bigger hero sub-line and CTAs ("A COLLECTION…", "BEGIN READING"). */
+  .hero-sub { font-size: 14px; letter-spacing: 0.28em; margin-bottom: 26px; }
+  .cta { font-size: 14px; }
+  .cta--sm { font-size: 12.5px; }
+
+  /* Tighten hero vertical rhythm so the whole hero clears a 768px laptop. */
+  .hero-inner .mark { margin-bottom: 14px; }
+  .hero-inner .rule { margin-top: 18px; margin-bottom: 18px; }
+
+  /* Bigger body copy and Collection doors, including the small "ENTER". */
+  .body { font-size: clamp(17px, 1.7vw, 20px); }
+  .collection-door-title { font-size: clamp(28px, 3.6vw, 42px); }
+  .collection-door-desc { font-size: 16.5px; }
+  .collection-door-arrow { font-size: 13px; }
+
+  /* Entry hero cap (entry pages, unchanged). */
   .entry-hero { max-width: 820px; }
 
-  /* ---- Homepage: read as oversized on wide screens. Contain the big
-     headings and photography on desktop only; everything below 901px
-     (mobile + tablet) keeps the original larger, full-bleed scale. ---- */
+  /* Hero fits one screen to "BEGIN READING": trim the frame padding. */
+  .hero-frame { padding-top: 80px; padding-bottom: 48px; }
 
-  /* Full-width desk band under the hero — shorter. */
+  /* Balanced "cards": the photo frame takes the text column's height and the
+     image covers it (absolute-positioned so a portrait photo can't inflate
+     the row). Result: picture-beside-content of equal height on both sides. */
+  .latest { max-width: 1200px; align-items: stretch; }
+  .panel { align-items: stretch; }
+  .latest-plate, .panel-plate { aspect-ratio: auto; }
+  .latest-plate img, .panel-plate img { position: absolute; inset: 0; }
+  .panel-copy { padding: 64px clamp(48px, 5vw, 72px); }
+
+  /* Full-width desk band under the hero — kept contained. */
   .hero-plate { height: clamp(320px, 42vh, 440px); }
 
-  /* "Latest publication" row — pull it in from full 1400px. */
-  .latest { max-width: 1200px; }
+  /* Questions band photo — brought closer to its (short) content height. */
+  .interlude-plate { aspect-ratio: 4/3; max-height: 360px; }
 
-  /* About panels: the 1:1 aspect-ratio forced each photo into a ~712px
-     square that dictated the whole row height. Drop the ratio so the image
-     follows the text height instead, filling the column width as a calmer
-     landscape crop. Width is unchanged, so no overflow. Also trim the heavy
-     text padding so the rows (and therefore the photos) sit shorter. */
-  .panel-plate { aspect-ratio: auto; }
-  .panel-copy { padding: 60px clamp(48px, 5vw, 72px); }
-
-  /* Questions band photo (landscape) — shorter, less dominant. */
-  .interlude-plate { aspect-ratio: 4/3; max-height: 440px; }
-
-  /* Closing photo (begin.jpg) is portrait, so keep the base 4:5 frame but
-     cap the height so it stays contained on desktop. */
+  /* Closing photo (begin.jpg, portrait) — keep 4:5, height-capped. */
   .closing-plate { max-height: 560px; }
 }
 
