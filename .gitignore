@@ -1,0 +1,4 @@
+
+# Source originals with spaces in their names (optimized copies are tracked)
+assets/photos/* *.png
+assets/photos/* *.jpg
