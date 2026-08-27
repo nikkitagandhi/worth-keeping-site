@@ -8,6 +8,7 @@
 :root {
   --ink: #14120E;
   --paper: #F2EDE1;
+  --page-bg: var(--paper); /* page background only; tinted per collection */
   --paper-deep: #E8E1D1;
   --stone: #CFC9BC;
   --archive: #7A6F58;
@@ -32,7 +33,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--page-bg);
   color: var(--ink);
   font-family: var(--text);
   font-size: 17px;
@@ -1195,10 +1196,13 @@ img { max-width: 100%; display: block; }
    applied ONLY to the accession number, hairline and drop cap. Photos and
    body copy are never touched. Set via a data-collection on <body>. --- */
 :root { --accent: var(--seal); }
-body[data-collection="story"]       { --accent: #8c5a3b; } /* leather sienna */
-body[data-collection="objects"]     { --accent: #8a6a34; } /* antique brass  */
-body[data-collection="remembering"] { --accent: #6a4e5b; } /* dusty plum     */
-body[data-collection="questions"]   { --accent: #4d6660; } /* verdigris      */
+/* Each collection also gets a whisper-tint page background — same cream family,
+   nudged a few percent toward its accent hue, so moving between collections
+   feels like a different room in the same house rather than the same page. */
+body[data-collection="story"]       { --accent: #8c5a3b; --page-bg: #F2EBDD; } /* leather sienna · warm cream */
+body[data-collection="objects"]     { --accent: #8a6a34; --page-bg: #F3ECD9; } /* antique brass · sand        */
+body[data-collection="remembering"] { --accent: #6a4e5b; --page-bg: #F0EAE8; } /* dusty plum · faint greige   */
+body[data-collection="questions"]   { --accent: #4d6660; --page-bg: #EBEEE7; } /* verdigris · faint sage      */
 
 .grid-card-kicker::before { color: var(--accent); }
 .grid-card-title::after   { background: var(--accent); }
