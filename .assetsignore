@@ -1,0 +1,9 @@
+# Files in the repo that should NOT be uploaded as public site assets.
+# Same syntax as .gitignore. Fixes Cloudflare "Asset too large" from .git history.
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+wrangler.toml
+node_modules
+*.md
