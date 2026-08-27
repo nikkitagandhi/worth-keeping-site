@@ -1185,7 +1185,61 @@ img { max-width: 100%; display: block; }
   font-size: 3.9em;
   line-height: 0.76;
   padding: 6px 14px 0 0;
-  color: var(--seal);
+  color: var(--accent);
+}
+
+/* --- Per-collection accent — a muted vintage-earth tint per collection,
+   applied ONLY to the accession number, hairline and drop cap. Photos and
+   body copy are never touched. Set via a data-collection on <body>. --- */
+:root { --accent: var(--seal); }
+body[data-collection="story"]       { --accent: #8c5a3b; } /* leather sienna */
+body[data-collection="objects"]     { --accent: #8a6a34; } /* antique brass  */
+body[data-collection="remembering"] { --accent: #6a4e5b; } /* dusty plum     */
+body[data-collection="questions"]   { --accent: #4d6660; } /* verdigris      */
+
+.grid-card-kicker::before { color: var(--accent); }
+.grid-card-title::after   { background: var(--accent); }
+.entry-kicker             { color: var(--accent); }
+
+/* --- Homepage collection doors: catalogue numeral + per-door accent + the
+   same hover hairline, so the front page reads like the rest of the archive. --- */
+.collection-door[data-col="story"]       { --accent: #8c5a3b; }
+.collection-door[data-col="objects"]     { --accent: #8a6a34; }
+.collection-door[data-col="design"]      { --accent: #6b6a44; } /* olive */
+.collection-door[data-col="questions"]   { --accent: #4d6660; }
+.collection-door[data-col="remembering"] { --accent: #6a4e5b; }
+
+.collection-door-no {
+  font-family: var(--sans);
+  font-size: 12px; letter-spacing: 0.22em; font-weight: 400;
+  color: var(--accent);
+  margin-right: 16px; vertical-align: 0.3em;
+}
+.collection-door-title { position: relative; display: inline-block; }
+.collection-door-title::after {
+  content: ""; position: absolute; left: 0; bottom: -9px;
+  width: 0; height: 1px; background: var(--accent);
+  transition: width 520ms cubic-bezier(.19,.7,.2,1);
+}
+.collection-door:hover .collection-door-title::after { width: 48px; }
+
+/* --- About: numbered sections + collection-tinted "What We Share" list. --- */
+.about { counter-reset: sec; }
+.about .panel { counter-increment: sec; }
+.about .panel .eyebrow--left::before {
+  content: counter(sec, upper-roman) "  ·  ";
+  color: var(--archive);
+}
+.about .share-list li:nth-child(1) { --accent: #8c5a3b; }
+.about .share-list li:nth-child(2) { --accent: #8a6a34; }
+.about .share-list li:nth-child(3) { --accent: #6b6a44; }
+.about .share-list li:nth-child(4) { --accent: #4d6660; }
+.about .share-list li:nth-child(5) { --accent: #6a4e5b; }
+.about .share-list li a::before,
+.about .share-list li.is-soon > span:first-child::before {
+  content: ""; display: inline-block;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); margin-right: 12px; vertical-align: 1.5px;
 }
 
 /* ============================================================
