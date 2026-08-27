@@ -1277,6 +1277,15 @@ img { max-width: 100%; display: block; }
   /* Entry hero cap (entry pages, unchanged). */
   .entry-hero { max-width: 820px; }
 
+  /* Category grids (Story / Objects / Things) on desktop: a uniform
+     Instagram-style gallery of 16:9 landscape cards (1280x720), replacing
+     the oversized full-width featured "hero" card and the portrait 4:5
+     crop. Mobile keeps its 4:5 portrait grid, which is already right. */
+  .editorial-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid-card, .grid-card--wide { grid-column: span 1; }
+  .grid-card-plate,
+  .grid-card--wide .grid-card-plate { aspect-ratio: 16/9; }
+
   /* Hero fits one screen to "BEGIN READING": trim the frame padding. */
   .hero-frame { padding-top: 80px; padding-bottom: 48px; }
 
