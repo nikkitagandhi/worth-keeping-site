@@ -15,8 +15,8 @@
 @font-face { font-family:'Butler'; font-style:normal; font-weight:900; font-display:swap; src:url('/font/Butler_Black.woff') format('woff'); }
 
 :root {
-  --ink: #14120E;
-  --paper: #F2EDE1;
+  --ink: #111111;              /* brand Ink */
+  --paper: #F5F2E9;            /* brand Paper */
   --page-bg: var(--paper); /* page background only; tinted per collection */
   --paper-deep: #E8E1D1;
   --stone: #CFC9BC;
@@ -182,11 +182,11 @@ img { max-width: 100%; display: block; }
 .rule--short { width: 34px; margin-top: 20px; margin-bottom: 20px; }
 .rule--light { background: linear-gradient(90deg, transparent, var(--stone) 25%, var(--stone) 75%, transparent); }
 
-/* Mark glyph (the four-point star + stem from the reference) */
+/* Publisher's mark — the door (threshold into the archive), from the brand guide */
 .mark { display: flex; justify-content: center; margin-bottom: 26px; }
 .mark-glyph {
-  width: 20px;
-  height: 54px;
+  width: 26px;
+  height: 42px;
   color: var(--archive);
   fill: var(--archive);
 }
