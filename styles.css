@@ -1462,7 +1462,9 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   .hero-inner .mark-glyph { height: 40px; }
   .hero-inner .rule { margin-top: 10px; margin-bottom: 10px; }
   .hero-lede { margin-bottom: 2px; }
-  .hero-sub { margin-bottom: 14px; }
+  /* Keep "A COLLECTION OF WHAT DESERVES TO LAST." on ONE line on every phone
+     (it wrapped on the slightly-narrower S24+). Tighten spacing + size to fit. */
+  .hero-sub { margin-bottom: 14px; font-size: clamp(9px, 2.5vw, 11px); letter-spacing: 0.18em; white-space: nowrap; }
 }
 
 @media (max-width: 560px) {
