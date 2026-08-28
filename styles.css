@@ -106,7 +106,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(46px, 9vw, 104px);
-  line-height: 1.02;
+  line-height: 1.12;              /* Butler runs tall — extra leading prevents clipping */
   letter-spacing: -0.015em;
   margin: 0;
 }
@@ -486,7 +486,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(64px, 15.5vw, 190px);
-  line-height: 0.92;
+  line-height: 1.0;
   letter-spacing: -0.028em;
   margin: 0;
 }
@@ -749,6 +749,7 @@ img { max-width: 100%; display: block; }
 }
 .closing-inner { max-width: 34ch; }
 .closing .eyebrow { text-align: left; }
+.closing .display { margin-bottom: 14px; }   /* keep "Begin." off the subheading */
 .closing .rule--light { margin-left: 0; }
 .closing-plate { aspect-ratio: 4/5; }
 .closing-plate img { width: 100%; height: 100%; object-fit: cover; }
