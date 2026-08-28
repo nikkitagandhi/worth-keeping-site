@@ -18,3 +18,8 @@ assets/photos/about the curator.jpg
 
 # Replaced by the far smaller thoughtful.jpg (2.35 MB PNG no longer served).
 assets/thoughtful.png
+
+# Photos now ship as WebP; the JPG originals stay in the repo but are not served.
+# (assets/og-image.jpg is outside this folder and IS used for social cards.)
+assets/photos/*.jpg
+assets/thoughtful.jpg
