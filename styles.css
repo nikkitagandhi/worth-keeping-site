@@ -997,21 +997,21 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 2px 5px rgba(35, 26, 14, 0.09), 0 16px 40px rgba(35, 26, 14, 0.14);
 }
 .q-front {
-  background: var(--paper);
+  background: #14120E;                    /* same dark as the closing/footer */
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  color: var(--ink);
+  color: var(--paper);
 }
 .q-front::before {                       /* inset catalogue-card frame */
   content: ''; position: absolute; inset: 14px;
-  border: 1px solid rgba(93, 84, 64, 0.28); pointer-events: none;
+  border: 1px solid rgba(207, 201, 188, 0.22); pointer-events: none;
 }
-.q-tag { position: absolute; top: 32px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--archive); }
-.q-no  { font-family: var(--serif); font-weight: 300; font-size: clamp(72px, 9vw, 120px); line-height: 1; color: var(--seal); }
-.q-turn { position: absolute; bottom: 32px; font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.28em; color: var(--archive); transition: color .4s var(--ease); }
+.q-tag { position: absolute; top: 32px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--stone); }
+.q-no  { font-family: var(--serif); font-weight: 300; font-size: clamp(72px, 9vw, 120px); line-height: 1; color: var(--paper); }
+.q-turn { position: absolute; bottom: 32px; font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.28em; color: rgba(207, 201, 188, 0.72); transition: color .4s var(--ease); }
 .q-back { transform: rotateY(180deg); }
 .q-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .question-card:hover .q-face { box-shadow: 0 4px 9px rgba(35, 26, 14, 0.12), 0 26px 56px rgba(35, 26, 14, 0.2); }
-.question-card:hover .q-turn { color: var(--seal); }
+.question-card:hover .q-turn { color: var(--paper); }
 .question-card:focus-visible { outline: 2px solid var(--seal); outline-offset: 4px; }
 @media (max-width: 900px) { .questions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .questions-grid { grid-template-columns: 1fr; gap: 30px; } }
