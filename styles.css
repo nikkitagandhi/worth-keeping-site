@@ -1194,9 +1194,10 @@ img { max-width: 100%; display: block; }
 .entry-body h2 + p::first-letter {
   float: left;
   font-family: var(--serif);
-  font-size: 3.9em;
-  line-height: 0.76;
-  padding: 6px 14px 0 0;
+  font-weight: 800;              /* Butler ExtraBold — illuminated initial */
+  font-size: 4.4em;
+  line-height: 0.72;
+  padding: 8px 16px 0 0;
   color: var(--accent);
 }
 
