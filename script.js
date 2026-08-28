@@ -165,4 +165,12 @@
       signupButton.textContent = originalLabel;
     }
   });
+
+  /* ---------- Question flip cards ---------- */
+  document.querySelectorAll('.question-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const flipped = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+    });
+  });
 })();

@@ -977,17 +977,42 @@ img { max-width: 100%; display: block; }
   padding: 0 var(--gut) clamp(90px, 14vh, 160px);
   align-items: start;
 }
+/* Flip cards — a numbered catalogue face that turns to reveal the question. */
 .question-card {
-  margin: 0;
-  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  perspective: 1400px;
+  width: 100%; margin: 0; padding: 0; border: 0;
+  background: none; cursor: pointer; display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+.q-inner {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .85s cubic-bezier(.2, .7, .2, 1);
+}
+.question-card.is-flipped .q-inner { transform: rotateY(180deg); }
+.q-face {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 2px;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
   box-shadow: 0 2px 5px rgba(35, 26, 14, 0.09), 0 16px 40px rgba(35, 26, 14, 0.14);
-  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
 }
-.question-card img { width: 100%; height: auto; display: block; }
-.question-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 9px rgba(35, 26, 14, 0.12), 0 26px 56px rgba(35, 26, 14, 0.2);
+.q-front {
+  background: var(--paper);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--ink);
 }
+.q-front::before {                       /* inset catalogue-card frame */
+  content: ''; position: absolute; inset: 14px;
+  border: 1px solid rgba(93, 84, 64, 0.28); pointer-events: none;
+}
+.q-tag { position: absolute; top: 32px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--archive); }
+.q-no  { font-family: var(--serif); font-weight: 300; font-size: clamp(72px, 9vw, 120px); line-height: 1; color: var(--seal); }
+.q-turn { position: absolute; bottom: 32px; font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.28em; color: var(--archive); transition: color .4s var(--ease); }
+.q-back { transform: rotateY(180deg); }
+.q-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.question-card:hover .q-face { box-shadow: 0 4px 9px rgba(35, 26, 14, 0.12), 0 26px 56px rgba(35, 26, 14, 0.2); }
+.question-card:hover .q-turn { color: var(--seal); }
+.question-card:focus-visible { outline: 2px solid var(--seal); outline-offset: 4px; }
 @media (max-width: 900px) { .questions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .questions-grid { grid-template-columns: 1fr; gap: 30px; } }
 
