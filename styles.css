@@ -484,10 +484,10 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 300;              /* Butler Light — airy, couture-cover hero */
   font-size: clamp(64px, 15.5vw, 190px);
   line-height: 1.0;
-  letter-spacing: -0.028em;
+  letter-spacing: -0.022em;
   margin: 0;
 }
 .hero-title .line { display: block; }
