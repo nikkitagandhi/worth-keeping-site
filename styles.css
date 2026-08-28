@@ -1160,6 +1160,8 @@ img { max-width: 100%; display: block; }
 
 /* Photo answers the cursor: a slow zoom held inside the frame. */
 .grid-card-plate { overflow: hidden; }
+/* No warm-bloom tint on listing cards — show the photo clean (was distracting). */
+.grid-card-plate::after { display: none; }
 .grid-card-plate img { transition: transform 900ms cubic-bezier(.19,.7,.2,1); will-change: transform; }
 .grid-card:hover .grid-card-plate img { transform: scale(1.045); }
 
@@ -1384,14 +1386,14 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   /* .display / --md / --sm intentionally have NO override here, so the
      homepage section headings return to their original 104 / 68 / 40px. */
 
-  /* Bigger hero sub-line and CTAs ("A COLLECTION…", "BEGIN READING"). */
-  .hero-sub { font-size: 14px; letter-spacing: 0.28em; margin-bottom: 26px; }
+  /* Sub-line kept smaller than the CTA so "BEGIN READING" leads (was 14px). */
+  .hero-sub { font-size: 11px; letter-spacing: 0.24em; margin-bottom: 26px; }
   .cta { font-size: 14px; }
   .cta--sm { font-size: 12.5px; }
 
   /* Tighten hero vertical rhythm so the whole hero clears a 768px laptop. */
   .hero-inner .mark { margin-bottom: 14px; }
-  .hero-inner .rule { margin-top: 18px; margin-bottom: 18px; }
+  .hero-inner .rule { margin-top: 20px; margin-bottom: 18px; }
 
   /* Bigger body copy and Collection doors, including the small "ENTER". */
   .body { font-size: clamp(17px, 1.7vw, 20px); }
@@ -1476,7 +1478,7 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
      header (equal gap above and below). */
   .hero-frame { padding-top: 41px; padding-bottom: 30px; }
   .hero-inner .mark { margin-bottom: 14px; }
-  .hero-inner .rule { margin-top: 22px; margin-bottom: 22px; }
+  .hero-inner .rule { margin-top: 24px; margin-bottom: 22px; }
   .hero-lede { font-size: clamp(17px, 2.2vw, 24px); }
   .hero-sub { margin-bottom: 18px; }
 }
