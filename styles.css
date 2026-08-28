@@ -1010,7 +1010,7 @@ img { max-width: 100%; display: block; }
   transition: color .4s var(--ease);
 }
 .collection-door:hover .collection-door-title { color: var(--seal); }
-.collection-door-desc { font-family: var(--text); font-size: 15px; line-height: 1.65; color: var(--muted); max-width: 50ch; margin: 10px 0 0; }
+.collection-door-desc { font-family: var(--text); font-size: 15px; line-height: 1.65; color: #3A332A; font-weight: 500; max-width: 50ch; margin: 10px 0 0; }
 .collection-door-arrow {
   font-family: var(--sans);
   font-size: 10.5px;
@@ -1389,7 +1389,7 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   .hero-title { font-size: clamp(54px, 11vw, 144px); }
 
   /* Category / entry h1s keep their trimmed overrides (not flagged). */
-  .category-hero h1.display { font-size: clamp(26px, 4.97vw, 58px); }
+  .category-hero h1.display { font-size: clamp(26px, 4.97vw, 58px); font-weight: 200; }
   /* Homepage About-section heading ("Why Worth Keeping?") — ~10% smaller than
      the full .display (clamp(46px,9vw,104px)) so the section feels less oversized. */
   #about .about-intro .display { font-size: clamp(41px, 8.1vw, 94px); }
