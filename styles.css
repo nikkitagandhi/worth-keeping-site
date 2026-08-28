@@ -1004,6 +1004,7 @@ img { max-width: 100%; display: block; }
 .collection-door-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; }
 .collection-door-title {
   font-family: var(--serif);
+  font-weight: 300;              /* was defaulting to h3 bold (700) — bring into the Light hierarchy */
   font-size: clamp(23px, 3vw, 34px);
   color: var(--ink);
   margin: 0;
