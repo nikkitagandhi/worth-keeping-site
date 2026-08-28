@@ -11,7 +11,7 @@
   --page-bg: var(--paper); /* page background only; tinted per collection */
   --paper-deep: #E8E1D1;
   --stone: #CFC9BC;
-  --archive: #6B624D; /* deepened from #7A6F58 to pass WCAG AA (4.5:1) on cream */
+  --archive: #5D5440; /* muted label colour — deepened further for legibility on cream */
   --seal: #4A2F2A;
   --muted: #554E42;
 
@@ -1448,28 +1448,22 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
    relative, so its ::after fade stays inside it) — this lets it sit flush at the
    top full-bleed, with the text pulled up to overlap its faded lower edge. */
 @media (max-width: 900px) {
-  /* Fill exactly one *visible* screen (svh accounts for the mobile address bar,
-     unlike vh) with a flex column: photo banner on top, text flex-centred in the
-     space that remains. Kept compact so the CTA clears the fold with margin even
-     when the browser's toolbars eat into the height (e.g. Samsung Internet). */
-  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: 100vh; min-height: 100svh; padding: 0 0 20px; }
+  /* One visible screen (svh accounts for the mobile toolbar): photo banner on
+     top, text flex-centred below with the generous base spacing (matches the
+     iPhone target). svh + a modest banner keep the CTA above the fold. */
+  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: 100vh; min-height: 100svh; padding: 0 0 24px; }
   .hero-edge--left { display: none; }
   .hero-edge--right { position: relative; top: auto; bottom: auto; width: 100%; height: auto; flex: 0 0 auto; }
-  .hero-edge--right img { width: 100%; height: 30vh; height: 27svh; object-fit: cover; object-position: center 34%; }
+  .hero-edge--right img { width: 100%; height: 32vh; height: 28svh; object-fit: cover; object-position: center 34%; }
   .hero-edge--right::after { background: linear-gradient(180deg, transparent 30%, var(--paper) 94%); }
   .hero-inner { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; max-width: 560px; padding: 0 26px; }
-  .hero-inner .mark { margin-bottom: 6px; }
-  .hero-inner .mark-glyph { height: 40px; }
-  .hero-inner .rule { margin-top: 10px; margin-bottom: 10px; }
-  .hero-lede { margin-bottom: 2px; }
   /* Keep "A COLLECTION OF WHAT DESERVES TO LAST." on ONE line on every phone
-     (it wrapped on the slightly-narrower S24+). Tighten spacing + size to fit. */
-  .hero-sub { margin-bottom: 14px; font-size: clamp(9px, 2.5vw, 11px); letter-spacing: 0.18em; white-space: nowrap; }
+     (it wrapped on the slightly-narrower S24+). */
+  .hero-sub { font-size: clamp(9px, 2.5vw, 11px); letter-spacing: 0.18em; white-space: nowrap; }
 }
 
 @media (max-width: 560px) {
-  .hero-edge--right img { height: 26vh; height: 23svh; }
-  .hero-title { font-size: clamp(46px, 15vw, 72px); }
+  .hero-edge--right img { height: 28vh; height: 24svh; }
 }
 
 /* Short desktop viewports (3:2 laptops like the Spectre, or any window with a
@@ -1481,10 +1475,10 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   /* Balanced so the content centres in the *visible* area below the fixed
      header (equal gap above and below). */
   .hero-frame { padding-top: 41px; padding-bottom: 30px; }
-  .hero-inner .mark { margin-bottom: 8px; }
-  .hero-inner .rule { margin-top: 12px; margin-bottom: 12px; }
+  .hero-inner .mark { margin-bottom: 14px; }
+  .hero-inner .rule { margin-top: 22px; margin-bottom: 22px; }
   .hero-lede { font-size: clamp(17px, 2.2vw, 24px); }
-  .hero-sub { margin-bottom: 16px; }
+  .hero-sub { margin-bottom: 18px; }
 }
 
 /* ---- Warm section bands (homepage) ----------------------------------------
