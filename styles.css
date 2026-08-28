@@ -1444,17 +1444,19 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
    relative, so its ::after fade stays inside it) — this lets it sit flush at the
    top full-bleed, with the text pulled up to overlap its faded lower edge. */
 @media (max-width: 900px) {
-  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: auto; padding: 0 0 54px; }
+  /* Fill exactly one *visible* screen (svh accounts for the mobile address bar,
+     unlike vh) with a flex column: photo banner on top, text flex-centred in the
+     space that remains — so the CTA always lands above the fold on any phone. */
+  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: 100vh; min-height: 100svh; padding: 0 0 24px; }
   .hero-edge--left { display: none; }
-  .hero-edge--right { position: relative; top: auto; bottom: auto; width: 100%; height: auto; }
-  .hero-edge--right img { width: 100%; height: 40vh; object-fit: cover; object-position: center 34%; }
+  .hero-edge--right { position: relative; top: auto; bottom: auto; width: 100%; height: auto; flex: 0 0 auto; }
+  .hero-edge--right img { width: 100%; height: 38vh; height: 33svh; object-fit: cover; object-position: center 34%; }
   .hero-edge--right::after { background: linear-gradient(180deg, transparent 30%, var(--paper) 94%); }
-  .hero-inner { margin: -9vh auto 0; max-width: 560px; padding: 0 26px; }
+  .hero-inner { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; margin: -3svh auto 0; max-width: 560px; padding: 0 26px; }
 }
 
 @media (max-width: 560px) {
-  .hero-edge--right img { height: 37vh; }
-  .hero-inner { margin-top: -8vh; }
+  .hero-edge--right img { height: 34vh; height: 30svh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
