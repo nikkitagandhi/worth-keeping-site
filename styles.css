@@ -104,10 +104,10 @@ img { max-width: 100%; display: block; }
 
 .display {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 300;              /* Butler Light — airy grandeur for big display headings */
   font-size: clamp(46px, 9vw, 104px);
   line-height: 1.12;              /* Butler runs tall — extra leading prevents clipping */
-  letter-spacing: -0.015em;
+  letter-spacing: -0.012em;
   margin: 0;
 }
 .display em {
@@ -118,7 +118,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.01em;
 }
 .display--md { font-size: clamp(38px, 6.5vw, 68px); }
-.display--sm { font-size: clamp(27px, 3.4vw, 40px); line-height: 1.28; }
+.display--sm { font-size: clamp(27px, 3.4vw, 40px); line-height: 1.28; font-weight: 400; }  /* stay Regular — Light too thin small */
 .display--light { color: var(--paper); }
 
 .eyebrow {
