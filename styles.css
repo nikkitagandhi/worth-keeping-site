@@ -373,10 +373,10 @@ img { max-width: 100%; display: block; }
   padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 .hamburger span {
-  width: 26px; height: 1px;
+  width: 20px; height: 1px;
   background: var(--ink);
   transition: transform .4s var(--ease), opacity .3s var(--ease), width .4s var(--ease);
 }
@@ -1312,6 +1312,10 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   .editorial-grid { grid-template-columns: repeat(2, 1fr); }
   .grid-card { grid-column: span 1; }
   .grid-card--wide { grid-column: span 2; }
+
+  /* Collection doors: on phones the long titles pushed ENTER onto a second line
+     for some doors but not others. Stack title → ENTER/tag consistently. */
+  .collection-door-row { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 
 @media (max-width: 560px) {
@@ -1446,17 +1450,24 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
 @media (max-width: 900px) {
   /* Fill exactly one *visible* screen (svh accounts for the mobile address bar,
      unlike vh) with a flex column: photo banner on top, text flex-centred in the
-     space that remains — so the CTA always lands above the fold on any phone. */
-  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: 100vh; min-height: 100svh; padding: 0 0 24px; }
+     space that remains. Kept compact so the CTA clears the fold with margin even
+     when the browser's toolbars eat into the height (e.g. Samsung Internet). */
+  .hero-frame { display: flex; flex-direction: column; align-items: stretch; min-height: 100vh; min-height: 100svh; padding: 0 0 20px; }
   .hero-edge--left { display: none; }
   .hero-edge--right { position: relative; top: auto; bottom: auto; width: 100%; height: auto; flex: 0 0 auto; }
-  .hero-edge--right img { width: 100%; height: 38vh; height: 33svh; object-fit: cover; object-position: center 34%; }
+  .hero-edge--right img { width: 100%; height: 30vh; height: 27svh; object-fit: cover; object-position: center 34%; }
   .hero-edge--right::after { background: linear-gradient(180deg, transparent 30%, var(--paper) 94%); }
   .hero-inner { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; margin: -3svh auto 0; max-width: 560px; padding: 0 26px; }
+  .hero-inner .mark { margin-bottom: 6px; }
+  .hero-inner .mark-glyph { height: 40px; }
+  .hero-inner .rule { margin-top: 10px; margin-bottom: 10px; }
+  .hero-lede { margin-bottom: 2px; }
+  .hero-sub { margin-bottom: 14px; }
 }
 
 @media (max-width: 560px) {
-  .hero-edge--right img { height: 34vh; height: 30svh; }
+  .hero-edge--right img { height: 26vh; height: 23svh; }
+  .hero-title { font-size: clamp(46px, 15vw, 72px); }
 }
 
 /* Short desktop viewports (3:2 laptops like the Spectre, or any window with a
@@ -1485,8 +1496,16 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   padding-right: max(var(--gut), calc((100% - 1200px) / 2));
 }
 .collections { background: #E6DCC7; }              /* Five Ways to Notice — taupe    */
-.about .panel:nth-child(2) { background: #EFE7D4; }/* Our Purpose — soft linen       */
-.about .panel:nth-child(4) { background: #E8DFCC; }/* Our Promise — sand             */
+#about .panel:nth-child(2) { background: #EFE7D4; }/* Our Purpose — soft linen       */
+#about .panel:nth-child(4) { background: #E8DFCC; }/* Our Promise — sand             */
+
+/* ---- About PAGE section bands (scoped so they don't touch the homepage) ----
+   Each section its own warm shade. Panels are 1=Our Belief, 2=How We Curate,
+   3=The Curator; then the Collections directory; hero + closing keep base. */
+body[data-page="about"] .about .panel:nth-child(1) { background: #EFE7D4; } /* Our Belief — linen  */
+body[data-page="about"] .about .panel:nth-child(2) { background: #E9E0CD; } /* How We Curate — sand */
+body[data-page="about"] .about .panel:nth-child(3) { background: #F1EBDE; } /* The Curator — linen  */
+body[data-page="about"] .collections { background: #E6DCC7; }              /* Collections — taupe  */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
