@@ -1472,6 +1472,22 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
   .hero-sub { margin-bottom: 16px; }
 }
 
+/* ---- Warm section bands (homepage) ----------------------------------------
+   Each section gets its own shade from the same earthy beige family, so the
+   page reads as distinct movements rather than one long cream field. Hero stays
+   the base cream; interlude + "What We Share" keep their existing sand. Bands
+   bleed full width (the Latest card is un-capped and re-centred with padding). */
+.spread--manifesto { background: #E9E0CD; }        /* What deserves to last — sand   */
+.latest {
+  background: #F1EBDE;                              /* The Café That Sold Time — linen */
+  max-width: none;
+  padding-left:  max(var(--gut), calc((100% - 1200px) / 2));
+  padding-right: max(var(--gut), calc((100% - 1200px) / 2));
+}
+.collections { background: #E6DCC7; }              /* Five Ways to Notice — taupe    */
+.about .panel:nth-child(2) { background: #EFE7D4; }/* Our Purpose — soft linen       */
+.about .panel:nth-child(4) { background: #E8DFCC; }/* Our Promise — sand             */
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .grain, .foliage, .seal { animation: none; }
