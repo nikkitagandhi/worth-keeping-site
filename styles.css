@@ -414,7 +414,7 @@ img { max-width: 100%; display: block; }
   align-items: baseline;
   gap: 18px;
   font-family: var(--serif);
-  font-size: clamp(22px, 2.6vw, 34px);   /* restrained, Kinfolk-scale (was up to 66px) */
+  font-size: clamp(26px, 2.8vw, 34px);   /* restrained, Kinfolk-scale (was up to 66px); ~26px on phones, 34px on desktop */
   color: var(--paper);
   text-decoration: none;
   opacity: 0;
