@@ -11,7 +11,7 @@
   --page-bg: var(--paper); /* page background only; tinted per collection */
   --paper-deep: #E8E1D1;
   --stone: #CFC9BC;
-  --archive: #7A6F58;
+  --archive: #6B624D; /* deepened from #7A6F58 to pass WCAG AA (4.5:1) on cream */
   --seal: #4A2F2A;
   --muted: #554E42;
 
