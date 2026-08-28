@@ -1476,9 +1476,9 @@ body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta   
    (min-height > 860px) are unaffected and keep the full-size hero. */
 @media (min-width: 901px) and (max-height: 860px) {
   .hero-title { font-size: clamp(58px, 15vh, 132px); }
-  /* Extra top padding offsets the fixed header so the content centres in the
-     *visible* area below it, rather than sitting high. */
-  .hero-frame { padding-top: 68px; padding-bottom: 30px; }
+  /* Balanced so the content centres in the *visible* area below the fixed
+     header (equal gap above and below). */
+  .hero-frame { padding-top: 41px; padding-bottom: 30px; }
   .hero-inner .mark { margin-bottom: 8px; }
   .hero-inner .rule { margin-top: 12px; margin-bottom: 12px; }
   .hero-lede { font-size: clamp(17px, 2.2vw, 24px); }
