@@ -423,7 +423,7 @@ img { max-width: 100%; display: block; }
   align-items: baseline;
   gap: 18px;
   font-family: var(--serif);
-  font-size: clamp(23px, 2.3vw, 30px);   /* small & restrained — menu is wayfinding, never a headline (~23px phones, 30px desktop) */
+  font-size: clamp(21px, 1.9vw, 26px);   /* restrained serif — Kinfolk register, never a headline (~21px phones, 26px desktop) */
   letter-spacing: -0.01em;               /* match the slight negative track on Butler display type */
   color: var(--paper);
   text-decoration: none;
