@@ -1029,6 +1029,7 @@ img { max-width: 100%; display: block; }
 }
 .collection-doors .collection-door:last-child { border-bottom: 1px solid rgba(122, 111, 88, 0.24); }
 .collections .display { font-weight: 700; }  /* "The Collection" — Bold section masthead, matching the category-page titles */
+.latest .display { font-weight: 500; }        /* featured story headline — semibold, same as the story heads */
 .collection-door-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; }
 .collection-door-title {
   font-family: var(--serif);
@@ -1095,7 +1096,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   margin: 0 0 18px;
 }
-.entry-head .display { margin: 0 0 14px; }
+.entry-head .display { margin: 0 0 14px; font-weight: 700; }  /* article title — Bold masthead, heavier than the semibold section heads */
 .entry-subtitle {
   font-family: var(--text);
   font-style: italic;
@@ -1145,7 +1146,7 @@ img { max-width: 100%; display: block; }
 .entry-takeaway p { font-family: var(--text); font-style: italic; font-size: 17px; color: var(--seal); margin: 0; }
 
 .entry-body { position: relative; z-index: 3; max-width: 780px; margin: 0 auto; padding: 0 var(--gut) clamp(60px, 8vh, 100px); }
-.entry-body h2 { font-family: var(--serif); font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); margin: 0 0 20px; line-height: 1.2; }
+.entry-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); margin: 0 0 20px; line-height: 1.2; }  /* semibold (was default 700) — lighter than the article title */
 .entry-body p { font-family: var(--text); font-size: 17px; line-height: 1.8; color: var(--muted); max-width: 65ch; margin: 0 0 22px; }
 /* Legacy class from the placeholder era; entries filled with real prose in a
    single block still use it. Render as normal body text and honour the blank
