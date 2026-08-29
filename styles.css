@@ -1233,13 +1233,15 @@ img { max-width: 100%; display: block; }
    applied ONLY to the accession number, hairline and drop cap. Photos and
    body copy are never touched. Set via a data-collection on <body>. --- */
 :root { --accent: var(--seal); }
-/* Per-collection accent — kept strictly in the warm beige/brown family so the
-   whole site stays "time paused" warm. Page background is one cream everywhere
-   (no per-collection tint — the faint variation wasn't earning its keep). */
-body[data-collection="story"]       { --accent: #8c5a3b; } /* leather sienna     */
-body[data-collection="objects"]     { --accent: #8a6a34; } /* antique brass      */
-body[data-collection="remembering"] { --accent: #6e4a38; } /* deep coffee brown  */
-body[data-collection="questions"]   { --accent: #a0623c; } /* warm terracotta    */
+/* Per-collection accent + a whisper-tint page background — kept strictly in the
+   warm beige/brown family so the whole site stays "time paused" warm and reads as
+   one building. Each hall's Paper shifts a few points toward its own earth tone:
+   felt more than seen. --page-bg drives the body; category heroes are transparent
+   and inherit it. */
+body[data-collection="story"]       { --accent: #8c5a3b; --page-bg: #F3EDE2; } /* leather sienna / rosy paper   */
+body[data-collection="objects"]     { --accent: #8a6a34; --page-bg: #F4F0E2; } /* antique brass / golden paper  */
+body[data-collection="remembering"] { --accent: #6e4a38; --page-bg: #F1ECE1; } /* deep coffee / dim taupe paper */
+body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /* terracotta / warm paper       */
 
 .grid-card-kicker::before { color: var(--accent); }
 .grid-card-title::after   { background: var(--accent); }
