@@ -424,7 +424,7 @@ img { max-width: 100%; display: block; }
   align-items: baseline;
   gap: 18px;
   font-family: var(--serif);
-  font-size: clamp(21px, 1.9vw, 26px);   /* restrained serif — Kinfolk register, never a headline (~21px phones, 26px desktop) */
+  font-size: clamp(23px, 2.2vw, 28px);   /* restrained serif — Kinfolk register (~23px phones, 28px desktop) */
   letter-spacing: -0.01em;               /* match the slight negative track on Butler display type */
   color: var(--paper);
   text-decoration: none;
@@ -1460,7 +1460,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   /* Bigger body copy and Collection doors, including the small "ENTER". */
   .body { font-size: clamp(17px, 1.7vw, 20px); }
   .collection-door-title { font-size: clamp(28px, 3.6vw, 42px); }
-  .collection-door-desc { font-size: 16.5px; }
+  .collection-door-desc { font-size: 17.5px; color: #574F41; }  /* +1px and lifted off near-black so the title leads (was clashing) */
   .collection-door-arrow { font-size: 13px; }
 
   /* Entry hero cap (entry pages, unchanged). */
