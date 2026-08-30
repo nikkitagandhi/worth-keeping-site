@@ -1100,6 +1100,25 @@ img { max-width: 100%; display: block; }
 /* Today card front — a decorative quotation mark instead of a numeral. */
 .q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--stone); }
 
+/* ---- Questions: text-card reveal, deliberately distinct from Quotes ----
+   Rosier card, a larger prompt, a terracotta accent rule above, no attribution. */
+.q-back--question {
+  background: #EEDFCB;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 22px;
+  padding: clamp(26px, 8%, 44px);
+}
+.q-back--question::before {          /* terracotta-tinted inner frame */
+  content: ''; position: absolute; inset: 14px;
+  border: 1px solid rgba(160, 98, 60, 0.30); pointer-events: none;
+}
+.q-accent-rule { width: 30px; height: 1.5px; background: var(--accent); flex: 0 0 auto; }
+.q-question {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(19px, 2.4vw, 25px); line-height: 1.28;
+  letter-spacing: -0.006em; color: var(--seal);
+}
+
 /* Homepage — "The Collection" doors (5 quiet sibling entry points) */
 .collection-doors { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; padding: 0 var(--gut); }
 .collection-door {
