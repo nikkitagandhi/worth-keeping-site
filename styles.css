@@ -1098,7 +1098,7 @@ img { max-width: 100%; display: block; }
 .q-cite { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--archive); }
 .q-cite::before { content: '\2014\00a0'; }
 /* Today card front — a decorative quotation mark instead of a numeral. */
-.q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--seal); }
+.q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--stone); }
 
 /* Homepage — "The Collection" doors (5 quiet sibling entry points) */
 .collection-doors { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; padding: 0 var(--gut); }
