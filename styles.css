@@ -1066,6 +1066,40 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) { .questions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .questions-grid { grid-template-columns: 1fr; gap: 30px; } }
 
+/* ============================================================
+   QUOTES WORTH KEEPING — a daily draw + a deck of flip cards.
+   Reuses the Questions flip mechanics (.question-card / .q-*);
+   the back face is a typographic quote card instead of a photo.
+   ============================================================ */
+.quote-today { display: flex; justify-content: center; padding: 0 var(--gut) clamp(56px, 9vh, 100px); }
+.quote-card--today { width: min(390px, 84vw); }
+.deck-label {
+  text-align: center;
+  font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em;
+  color: var(--archive); text-transform: uppercase;
+  margin: 0 0 clamp(24px, 4vh, 40px);
+}
+/* Typographic back face — warm card, quote in Butler + attribution. */
+.q-back--quote {
+  background: #F3ECDB;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; gap: 20px;
+  padding: clamp(26px, 8%, 46px);
+}
+.q-back--quote::before {          /* faint inner frame, echoing the dark front */
+  content: ''; position: absolute; inset: 14px;
+  border: 1px solid rgba(93, 84, 64, 0.22); pointer-events: none;
+}
+.q-quote {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(17px, 2.05vw, 22px); line-height: 1.34;
+  letter-spacing: -0.006em; color: var(--seal);
+}
+.q-cite { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--archive); }
+.q-cite::before { content: '\2014\00a0'; }
+/* Today card front — a decorative quotation mark instead of a numeral. */
+.q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--seal); }
+
 /* Homepage — "The Collection" doors (5 quiet sibling entry points) */
 .collection-doors { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; padding: 0 var(--gut); }
 .collection-door {
@@ -1292,6 +1326,7 @@ img { max-width: 100%; display: block; }
 body[data-collection="story"]       { --accent: #8c5a3b; --page-bg: #F3EDE2; } /* leather sienna / rosy paper   */
 body[data-collection="objects"]     { --accent: #8a6a34; --page-bg: #F4F0E2; } /* antique brass / golden paper  */
 body[data-collection="remembering"] { --accent: #6e4a38; --page-bg: #F1ECE1; } /* deep coffee / dim taupe paper */
+body[data-collection="quotes"]      { --accent: #8f6a2e; --page-bg: #F4EEDE; } /* warm bronze / parchment      */
 body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /* terracotta / warm paper       */
 
 .grid-card-kicker::before { color: var(--accent); }
