@@ -742,7 +742,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   padding: 15px 0;
   font-family: var(--serif);
-  font-size: clamp(15px, 1.5vw, 19px);
+  font-size: clamp(16px, 1.7vw, 21px);
   color: var(--ink);
   text-decoration: none;
   transition: color .4s var(--ease), padding-left .4s var(--ease);
@@ -764,7 +764,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   padding: 15px 0;
   font-family: var(--serif);
-  font-size: clamp(15px, 1.5vw, 19px);
+  font-size: clamp(16px, 1.7vw, 21px);
   color: var(--muted);
 }
 .share-list-soon-tag {
@@ -1470,7 +1470,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .collection-door-title { font-size: 26px; }
   .collection-door-desc { font-size: 17px; font-weight: 400; }  /* +1px and a lighter weight */
   .grid-card-title { font-size: 22px; }
-  .share-list a, .share-list li.is-soon { font-size: 17px; }    /* What We Share collection titles +2 */
+  .share-list a, .share-list li.is-soon { font-size: 19px; }    /* What We Share collection titles */
   .category-hero .display { font-size: 45px; }                   /* category page title -1 */
   .entry-body h2 { font-size: 26px; }                            /* details subheads (What Actually Happened / Why It Still Matters) +2 */
 }
