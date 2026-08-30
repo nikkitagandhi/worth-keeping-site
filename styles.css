@@ -1340,6 +1340,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
 .collection-door[data-col="places"]      { --accent: #7a6535; } /* khaki-bronze */
 .collection-door[data-col="questions"]   { --accent: #a0623c; }
 .collection-door[data-col="remembering"] { --accent: #6e4a38; }
+.collection-door[data-col="quotes"]      { --accent: #8f6a2e; } /* warm bronze */
 
 .collection-door-no {
   font-family: var(--sans);
