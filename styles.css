@@ -1440,8 +1440,13 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .grid-card--wide { grid-column: span 2; }
 
   /* Collection doors: on phones the long titles pushed ENTER onto a second line
-     for some doors but not others. Stack title → ENTER/tag consistently. */
-  .collection-door-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+     for some doors but not others. Keep the arrow beside the title (top-right),
+     dropping the "ENTER" label to just "→" so it never wraps to its own line. */
+  .collection-door-row { flex-direction: row; align-items: baseline; flex-wrap: nowrap; gap: 16px; }
+  .collection-door-arrow { font-size: 0; letter-spacing: 0; }
+  .collection-door-arrow::after { content: '\2192'; font-size: 16px; }
+  /* the "Coming soon" pill can't shrink like the arrow — keep it stacked below its title */
+  .collection-door--soon .collection-door-row { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
 @media (max-width: 560px) {
