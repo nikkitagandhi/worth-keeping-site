@@ -446,12 +446,43 @@ img { max-width: 100%; display: block; }
   color: var(--archive);
 }
 .nav-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px 32px;
+  flex-wrap: wrap;
   font-family: var(--sans);
   font-size: 10px;
   letter-spacing: .3em;
   color: var(--archive);
   margin: 0;
 }
+.nav-social {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .3em;
+  color: var(--archive);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .4s var(--ease);
+}
+.nav-social:hover { color: var(--paper); }
+/* Large, faint publisher's-door mark filling the open right side of the menu —
+   the threshold you step through to reach the collection. Desktop only (on
+   phones there isn't room beside the nav list). */
+.nav-door {
+  display: none;
+  position: absolute;
+  right: clamp(40px, 8vw, 150px);
+  top: 50%;
+  transform: translateY(-50%);
+  height: clamp(260px, 48vh, 480px);
+  width: auto;
+  color: var(--stone);
+  opacity: 0.10;
+  pointer-events: none;
+}
+@media (min-width: 901px) { .nav-door { display: block; } }
 
 /* ============================================================
    HERO
