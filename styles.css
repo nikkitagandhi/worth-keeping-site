@@ -447,9 +447,9 @@ img { max-width: 100%; display: block; }
 }
 .nav-foot {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;    /* keep Instagram right beside the tagline */
   align-items: center;
-  gap: 18px 32px;
+  gap: 14px 30px;
   flex-wrap: wrap;
   font-family: var(--sans);
   font-size: 10px;
@@ -470,19 +470,31 @@ img { max-width: 100%; display: block; }
 /* Large, faint publisher's-door mark filling the open right side of the menu —
    the threshold you step through to reach the collection. Desktop only (on
    phones there isn't room beside the nav list). */
-.nav-door {
-  display: none;
-  position: absolute;
-  right: clamp(40px, 8vw, 150px);
-  top: 50%;
-  transform: translateY(-50%);
-  height: clamp(260px, 48vh, 480px);
-  width: auto;
-  color: var(--stone);
-  opacity: 0.10;
-  pointer-events: none;
+.nav-door { color: var(--stone); pointer-events: none; }
+/* Desktop: large, faint door watermark filling the open right side. */
+@media (min-width: 901px) {
+  .nav-door {
+    display: block;
+    position: absolute;
+    right: clamp(40px, 8vw, 150px);
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(260px, 48vh, 480px);
+    width: auto;
+    opacity: 0.10;
+  }
 }
-@media (min-width: 901px) { .nav-door { display: block; } }
+/* Mobile: a small, prominent door mark sitting just above the tagline. */
+@media (max-width: 900px) {
+  .nav-door {
+    display: block;
+    align-self: flex-start;
+    height: clamp(78px, 12vh, 108px);
+    width: auto;
+    margin: 0 0 26px;
+    opacity: 0.9;
+  }
+}
 
 /* ============================================================
    HERO
