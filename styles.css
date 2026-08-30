@@ -1151,7 +1151,7 @@ img { max-width: 100%; display: block; }
 
 .entry-body { position: relative; z-index: 3; max-width: 780px; margin: 0 auto; padding: 0 var(--gut) clamp(60px, 8vh, 100px); }
 .entry-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); margin: 0 0 20px; line-height: 1.2; }  /* semibold (was default 700) — lighter than the article title */
-.entry-body p { font-family: var(--text); font-size: 17px; line-height: 1.8; color: var(--muted); max-width: 65ch; margin: 0 0 22px; }
+.entry-body p { font-family: var(--text); font-size: 18px; line-height: 1.8; color: #33302A; max-width: 65ch; margin: 0 0 22px; }  /* deep warm brown — darker & more readable, sits in the drop-cap's earth family */
 /* Legacy class from the placeholder era; entries filled with real prose in a
    single block still use it. Render as normal body text and honour the blank
    lines between paragraphs (pre-line collapses stray indentation but keeps
@@ -1219,7 +1219,7 @@ img { max-width: 100%; display: block; }
 .grid-card:hover .grid-card-title::after { width: 44px; }
 
 /* --- Entry prose: a literary drop cap and a little more air --- */
-.entry-body p { font-size: clamp(17px, 1.1vw, 18.5px); line-height: 1.82; }
+.entry-body p { font-size: 18px; line-height: 1.82; }  /* details reading size (mobile 18px; desktop bumped to 19px in the >=901 block) */
 .entry-body h2 { margin-top: 50px; }
 .entry-body h2:first-child { margin-top: 0; }
 
@@ -1378,6 +1378,13 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   /* Bigger, more present tiles on phones — taller 4:3 image (was wide 16:9), Vogue-scale */
   .grid-card-plate, .grid-card--wide .grid-card-plate { aspect-ratio: 4 / 3; margin-bottom: 20px; }
   .entry-crumb { padding-top: 96px; }
+
+  /* Phone readability bumps: larger body copy & category deck (16->18), roomier
+     door title (+2) and card headline (+2), door description to 16px. */
+  .body { font-size: 18px; }
+  .collection-door-title { font-size: 25px; }
+  .collection-door-desc { font-size: 16px; }
+  .grid-card-title { font-size: 22px; }
 }
 
 /* ============================================================
@@ -1432,6 +1439,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
      the full .display (clamp(46px,9vw,104px)) so the section feels less oversized. */
   #about .about-intro .display { font-size: clamp(41px, 8.1vw, 94px); }
   .entry-head h1.display { font-size: clamp(21px, 4.2vw, 48px); }
+  .entry-body p { font-size: 19px; }   /* larger, more readable long-form body on desktop */
   /* .display / --md / --sm intentionally have NO override here, so the
      homepage section headings return to their original 104 / 68 / 40px. */
 
