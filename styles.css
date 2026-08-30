@@ -484,15 +484,16 @@ img { max-width: 100%; display: block; }
     opacity: 0.10;
   }
 }
-/* Mobile: a small, prominent door mark sitting just above the tagline. */
+/* Mobile: a small door-mark watermark, horizontally centred (aligns with the
+   full-width About row), sitting just above the tagline. */
 @media (max-width: 900px) {
   .nav-door {
     display: block;
-    align-self: flex-start;
-    height: clamp(78px, 12vh, 108px);
+    align-self: center;
+    height: clamp(68px, 10.5vh, 94px);
     width: auto;
     margin: 0 0 26px;
-    opacity: 0.9;
+    opacity: 0.10;
   }
 }
 
