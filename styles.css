@@ -1081,15 +1081,19 @@ img { max-width: 100%; display: block; }
 }
 /* Typographic back face — warm card, quote in Butler + attribution. */
 .q-back--quote {
-  background: #F3ECDB;
+  /* aged parchment — a touch darker at the very top/bottom where it rolls */
+  background: linear-gradient(180deg, #E8DBBE 0%, #F4EDDB 10%, #F6F0DF 50%, #F4EDDB 90%, #E8DBBE 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; gap: 20px;
-  padding: clamp(26px, 8%, 46px);
+  padding: clamp(46px, 15%, 66px) clamp(26px, 9%, 44px);   /* room for the rolls top & bottom */
 }
-.q-back--quote::before {          /* faint inner frame, echoing the dark front */
-  content: ''; position: absolute; inset: 14px;
-  border: 1px solid rgba(93, 84, 64, 0.22); pointer-events: none;
+/* Rolled ends of the scroll — a darker parchment cylinder catching light in the middle. */
+.q-back--quote::before, .q-back--quote::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 22px; pointer-events: none;
+  background: linear-gradient(180deg, #CBB98F 0%, #E4D6B4 16%, #D6C49C 54%, #B7A279 100%);
 }
+.q-back--quote::before { top: 0;    border-radius: 0 0 5px 5px / 0 0 16px 16px; box-shadow: 0 4px 7px rgba(74,47,42,0.20); }
+.q-back--quote::after  { bottom: 0; border-radius: 5px 5px 0 0 / 16px 16px 0 0; box-shadow: 0 -4px 7px rgba(74,47,42,0.20); }
 .q-quote {
   font-family: var(--serif); font-weight: 300;
   font-size: clamp(17px, 2.05vw, 22px); line-height: 1.34;
