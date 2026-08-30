@@ -1380,11 +1380,14 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .entry-crumb { padding-top: 96px; }
 
   /* Phone readability bumps: larger body copy & category deck (16->18), roomier
-     door title (+2) and card headline (+2), door description to 16px. */
+     door title and card headline, door description, What-We-Share links. */
   .body { font-size: 18px; }
-  .collection-door-title { font-size: 25px; }
-  .collection-door-desc { font-size: 16px; }
+  .collection-door-title { font-size: 26px; }
+  .collection-door-desc { font-size: 17px; font-weight: 400; }  /* +1px and a lighter weight */
   .grid-card-title { font-size: 22px; }
+  .share-list a, .share-list li.is-soon { font-size: 17px; }    /* What We Share collection titles +2 */
+  .category-hero .display { font-size: 45px; }                   /* category page title -1 */
+  .entry-body h2 { font-size: 26px; }                            /* details subheads (What Actually Happened / Why It Still Matters) +2 */
 }
 
 /* ============================================================
@@ -1520,7 +1523,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .hero-inner { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; max-width: 560px; padding: 0 26px; }
   /* Keep "A COLLECTION OF WHAT DESERVES TO LAST." on ONE line on every phone
      (it wrapped on the slightly-narrower S24+). */
-  .hero-sub { font-size: clamp(9px, 2.5vw, 11px); letter-spacing: 0.18em; white-space: nowrap; }
+  .hero-sub { font-size: clamp(10.5px, 2.9vw, 11.5px); letter-spacing: 0.15em; white-space: nowrap; }  /* +1px; tracking eased so it still holds one line */
 }
 
 @media (max-width: 560px) {
