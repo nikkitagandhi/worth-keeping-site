@@ -219,6 +219,15 @@ img { max-width: 100%; display: block; }
 .cta:hover svg { transform: translateX(7px); }
 .cta--sm { font-size: 10.5px; letter-spacing: 0.22em; gap: 10px; }
 .cta--sm svg { width: 26px; }
+/* Passive "scroll" cue (not a link) — a quiet label with a gently bobbing down-arrow. */
+.cta--scroll { color: var(--archive); cursor: default; border-bottom: 0; padding-bottom: 0; gap: 11px; }
+.cta--scroll svg { width: 8px; height: 24px; }
+.cta--scroll:hover { color: var(--archive); }
+.cta--scroll:hover svg { transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .cta--scroll svg { animation: scrollBob 2.4s var(--ease) infinite; }
+  @keyframes scrollBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+}
 
 /* ============================================================
    PHOTO TREATMENT — the unifying archival grade
@@ -1081,8 +1090,9 @@ img { max-width: 100%; display: block; }
 }
 /* Typographic back face — warm card, quote in Butler + attribution. */
 .q-back--quote {
-  /* aged parchment — a touch darker at the very top/bottom where it rolls */
-  background: linear-gradient(180deg, #E8DBBE 0%, #F4EDDB 10%, #F6F0DF 50%, #F4EDDB 90%, #E8DBBE 100%);
+  /* old vintage parchment — deeper aged tone so the scroll stands off the cream page;
+     darker at the very top/bottom where it rolls */
+  background: linear-gradient(180deg, #D6C596 0%, #E6D8B0 9%, #EADFBA 50%, #E6D8B0 91%, #D6C596 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; gap: 20px;
   padding: clamp(46px, 15%, 66px) clamp(26px, 9%, 44px);   /* room for the rolls top & bottom */
