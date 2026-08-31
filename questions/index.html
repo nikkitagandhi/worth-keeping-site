@@ -80,10 +80,20 @@
   <section class="category-hero">
     <p class="eyebrow" data-reveal>THE COLLECTION</p>
     <h1 class="display" data-reveal data-delay="1">Questions Worth Keeping</h1>
-    <p class="body body--center" data-reveal data-delay="2">Ten prompts worth sitting with - questions that reward slow, curious thinking. Each one waits behind a card.</p>
-    <p class="eyebrow" data-reveal data-delay="3" style="margin-top:20px;">TURN A CARD TO REVEAL THE QUESTION</p>
+    <p class="body body--center" data-reveal data-delay="2">Prompts worth sitting with - questions that reward slow, curious thinking. Draw today's question, or turn any in the deck below.</p>
   </section>
 
+  <p class="deck-label" data-reveal>A QUESTION FOR TODAY · TURN THE CARD</p>
+  <div class="quote-today">
+    <button type="button" id="today-question" class="question-card quote-card--today" aria-expanded="false" aria-label="Today's question - turn the card to reveal">
+      <span class="q-inner">
+        <span class="q-face q-front"><span class="q-tag">FOR TODAY</span><span class="q-mark">?</span><span class="q-turn"><svg class="q-door" viewBox="0 0 26 42" aria-hidden="true"><rect x="0.9" y="0.9" width="24.2" height="40.2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="13" cy="21" r="1.9" fill="currentColor"/></svg>TURN THE CARD</span></span>
+        <span class="q-face q-back q-back--question"><span class="q-glyph" aria-hidden="true">?</span><span class="q-question"></span></span>
+      </span>
+    </button>
+  </div>
+
+  <p class="deck-label" data-reveal>THE DECK · TURN ANY CARD</p>
   <div class="questions-grid">
     <button type="button" class="question-card" aria-expanded="false" aria-label="Question No. 1 - turn to reveal">
       <span class="q-inner">
@@ -227,5 +237,18 @@
 </div>
 
 <script src="/script.js"></script>
+<script>
+  /* A question for today - deterministic by calendar day, so everyone gets the same
+     question that day. Reads the deck (already in the DOM) so questions live in one place. */
+  (function () {
+    var deck = document.querySelectorAll('.questions-grid .question-card');
+    var today = document.getElementById('today-question');
+    if (!deck.length || !today) return;
+    var d = new Date();
+    var seed = d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate();
+    var pick = deck[seed % deck.length];
+    today.querySelector('.q-question').textContent = pick.querySelector('.q-question').textContent;
+  })();
+</script>
 </body>
 </html>
