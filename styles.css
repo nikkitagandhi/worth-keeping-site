@@ -1115,6 +1115,8 @@ img { max-width: 100%; display: block; }
 .q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--stone); }
 /* Small quotation-/question-mark motif inside a reveal card, in the collection accent. */
 .q-glyph { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 3.8vw, 40px); line-height: 0.5; color: var(--accent); }
+/* The " inks ~2.8x smaller than the ? at the same size — scale it up so the two motifs read the same. */
+.q-back--quote .q-glyph { font-size: clamp(84px, 10.7vw, 113px); line-height: 0.42; }
 
 /* ---- Questions: text-card reveal, deliberately distinct from Quotes ----
    Rosier card, a larger prompt, a terracotta accent rule above, no attribution. */
