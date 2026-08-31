@@ -1,11 +1,11 @@
 /* ============================================================
    WORTH KEEPING
-   Archival collage system — paper, sepia photography, ephemera.
+   Archival collage system - paper, sepia photography, ephemera.
    Palette: Ink #111111 · Paper #F5F2E9 · Stone #CFC9BC
             Archive #7A6F58 · Seal #4A2F2A
    ============================================================ */
 
-/* ---- Butler — brand display serif (self-hosted, weights mapped to one family) ---- */
+/* ---- Butler - brand display serif (self-hosted, weights mapped to one family) ---- */
 @font-face { font-family:'Butler'; font-style:normal; font-weight:200; font-display:swap; src:url('/font/Butler_Ultra_Light.woff') format('woff'); }
 @font-face { font-family:'Butler'; font-style:normal; font-weight:300; font-display:swap; src:url('/font/Butler_Light.woff') format('woff'); }
 @font-face { font-family:'Butler'; font-style:normal; font-weight:400; font-display:swap; src:url('/font/Butler_Regular.woff') format('woff'); }
@@ -20,7 +20,7 @@
   --page-bg: var(--paper); /* page background only; tinted per collection */
   --paper-deep: #E8E1D1;
   --stone: #CFC9BC;
-  --archive: #5D5440; /* muted label colour — deepened further for legibility on cream */
+  --archive: #5D5440; /* muted label colour - deepened further for legibility on cream */
   --seal: #4A2F2A;
   --muted: #554E42;
 
@@ -104,11 +104,11 @@ img { max-width: 100%; display: block; }
 
 .display {
   font-family: var(--serif);
-  font-weight: 300;              /* Butler Light — airy grandeur for big display headings */
+  font-weight: 300;              /* Butler Light - airy grandeur for big display headings */
   font-size: clamp(46px, 9vw, 104px);
-  line-height: 1.12;              /* Butler runs tall — extra leading prevents clipping */
+  line-height: 1.12;              /* Butler runs tall - extra leading prevents clipping */
   letter-spacing: -0.012em;
-  text-wrap: balance;            /* even line lengths — no orphan word on its own line */
+  text-wrap: balance;            /* even line lengths - no orphan word on its own line */
   margin: 0;
 }
 .display em {
@@ -119,7 +119,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.01em;
 }
 .display--md { font-size: clamp(38px, 6.5vw, 68px); }
-.display--sm { font-size: clamp(27px, 3.4vw, 40px); line-height: 1.28; font-weight: 400; }  /* stay Regular — Light too thin small */
+.display--sm { font-size: clamp(27px, 3.4vw, 40px); line-height: 1.28; font-weight: 400; }  /* stay Regular - Light too thin small */
 .display--light { color: var(--paper); }
 
 .eyebrow {
@@ -183,7 +183,7 @@ img { max-width: 100%; display: block; }
 .rule--short { width: 34px; margin-top: 20px; margin-bottom: 20px; }
 .rule--light { background: linear-gradient(90deg, transparent, var(--stone) 25%, var(--stone) 75%, transparent); }
 
-/* Publisher's mark — the door (threshold into the archive), from the brand guide */
+/* Publisher's mark - the door (threshold into the archive), from the brand guide */
 .mark { display: flex; justify-content: center; margin-bottom: 26px; }
 .mark-glyph {
   width: 26px;
@@ -219,7 +219,7 @@ img { max-width: 100%; display: block; }
 .cta:hover svg { transform: translateX(7px); }
 .cta--sm { font-size: 10.5px; letter-spacing: 0.22em; gap: 10px; }
 .cta--sm svg { width: 26px; }
-/* Passive "scroll" cue (not a link) — a quiet label with a gently bobbing down-arrow. */
+/* Passive "scroll" cue (not a link) - a quiet label with a gently bobbing down-arrow. */
 .cta--scroll { flex-direction: column; gap: 10px; color: var(--archive); cursor: default; border-bottom: 0; padding-bottom: 0; }
 .cta--scroll svg { width: 8px; height: 24px; }
 .cta--scroll:hover { color: var(--archive); }
@@ -230,7 +230,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   PHOTO TREATMENT — the unifying archival grade
+   PHOTO TREATMENT - the unifying archival grade
    ============================================================ */
 
 .plate img,
@@ -274,7 +274,7 @@ img { max-width: 100%; display: block; }
 
 .plate img, .prop img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Polaroid variant — the bordered prints in the reference */
+/* Polaroid variant - the bordered prints in the reference */
 .plate--polaroid {
   background: #F7F3E8;
   padding: 12px 12px 44px;
@@ -426,14 +426,14 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(10px, 2.4vh, 24px);         /* more air between items — grand, unhurried */
+  gap: clamp(10px, 2.4vh, 24px);         /* more air between items - grand, unhurried */
 }
 .nav-links a {
   display: flex;
   align-items: baseline;
   gap: 18px;
   font-family: var(--serif);
-  font-size: clamp(23px, 2.2vw, 28px);   /* restrained serif — Kinfolk register (~23px phones, 28px desktop) */
+  font-size: clamp(23px, 2.2vw, 28px);   /* restrained serif - Kinfolk register (~23px phones, 28px desktop) */
   letter-spacing: -0.01em;               /* match the slight negative track on Butler display type */
   color: var(--paper);
   text-decoration: none;
@@ -476,7 +476,7 @@ img { max-width: 100%; display: block; }
   transition: color .4s var(--ease);
 }
 .nav-social:hover { color: var(--paper); }
-/* Large, faint publisher's-door mark filling the open right side of the menu —
+/* Large, faint publisher's-door mark filling the open right side of the menu -
    the threshold you step through to reach the collection. Desktop only (on
    phones there isn't room beside the nav list). */
 .nav-door { color: var(--stone); pointer-events: none; }
@@ -539,7 +539,7 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
   font-family: var(--serif);
-  font-weight: 300;              /* Butler Light — airy, couture-cover hero */
+  font-weight: 300;              /* Butler Light - airy, couture-cover hero */
   font-size: clamp(64px, 15.5vw, 190px);
   line-height: 1.0;
   letter-spacing: -0.022em;
@@ -694,7 +694,7 @@ img { max-width: 100%; display: block; }
 .entry .display--sm { margin-bottom: 16px; }
 .entry .plate { aspect-ratio: 4/3; }
 
-/* Question interlude — dark archival band */
+/* Question interlude - dark archival band */
 .interlude {
   position: relative;
   z-index: 3;
@@ -928,7 +928,7 @@ img { max-width: 100%; display: block; }
 .credits a { color: rgba(207, 201, 188, 0.7); }
 
 /* ============================================================
-   CATEGORY PAGES — editorial grid + typographic list
+   CATEGORY PAGES - editorial grid + typographic list
    ============================================================ */
 
 .category-hero {
@@ -939,7 +939,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   padding: clamp(120px, 16vh, 200px) var(--gut) clamp(50px, 8vh, 90px);
 }
-.category-hero .display { margin-bottom: 22px; font-weight: 700; }  /* Butler Bold masthead — commanding, à la Vogue, clearly heavier than the semibold article heads */
+.category-hero .display { margin-bottom: 22px; font-weight: 700; }  /* Butler Bold masthead - commanding, à la Vogue, clearly heavier than the semibold article heads */
 .category-hero .body--center { margin-top: 0; text-align: left; max-width: 54ch; }  /* multi-line deck reads left-aligned; centering reserved for 1-2 poetic lines */
 .category-soon {
   display: inline-block;
@@ -977,7 +977,7 @@ img { max-width: 100%; display: block; }
 }
 .grid-card-title {
   font-family: var(--serif);
-  font-weight: 500;              /* Butler Medium (Butler has no 600) — refined semibold article head, lighter than the Bold masthead */
+  font-weight: 500;              /* Butler Medium (Butler has no 600) - refined semibold article head, lighter than the Bold masthead */
   font-size: clamp(20px, 2vw, 27px);
   line-height: 1.18;
   color: var(--ink);
@@ -987,7 +987,7 @@ img { max-width: 100%; display: block; }
 }
 .grid-card:hover .grid-card-title { color: var(--seal); }
 
-/* Placeholder plate — used where real photography hasn't been shot yet */
+/* Placeholder plate - used where real photography hasn't been shot yet */
 .plate-placeholder {
   position: relative;
   width: 100%;
@@ -1014,13 +1014,13 @@ img { max-width: 100%; display: block; }
   padding: 0 14px;
 }
 
-/* Things Worth Remembering — subtly muted / wistful mood */
+/* Things Worth Remembering - subtly muted / wistful mood */
 .editorial-grid--muted .grid-card-plate img { filter: sepia(0.5) saturate(0.5) contrast(1) brightness(0.9); }
 .editorial-grid--muted .plate-placeholder { opacity: 0.85; }
 .editorial-grid--muted .grid-card-title { color: var(--muted); }
 
-/* Questions Worth Keeping — quiet typographic list, no images */
-/* Questions Worth Keeping — a gallery of designed portrait question cards
+/* Questions Worth Keeping - quiet typographic list, no images */
+/* Questions Worth Keeping - a gallery of designed portrait question cards
    (the question text lives inside each image). 3-up desktop, 2-up tablet,
    1-up mobile. Cards keep their natural height so no card's text is cropped. */
 .questions-grid {
@@ -1034,7 +1034,7 @@ img { max-width: 100%; display: block; }
   padding: 0 var(--gut) clamp(90px, 14vh, 160px);
   align-items: start;
 }
-/* Flip cards — a numbered catalogue face that turns to reveal the question. */
+/* Flip cards - a numbered catalogue face that turns to reveal the question. */
 .question-card {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -1066,7 +1066,7 @@ img { max-width: 100%; display: block; }
 .q-tag { position: absolute; top: 32px; font-family: var(--sans); font-size: 11px; letter-spacing: 0.32em; color: var(--stone); }
 .q-no  { font-family: var(--serif); font-weight: 300; font-size: clamp(72px, 9vw, 120px); line-height: 1; color: var(--paper); }
 .q-turn { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: var(--sans); font-size: 9.5px; letter-spacing: 0.28em; color: rgba(207, 201, 188, 0.72); transition: color .4s var(--ease); }
-.q-door { width: 13px; height: 21px; opacity: 0.9; }  /* small doorway mark above the cue — one calm detail */
+.q-door { width: 13px; height: 21px; opacity: 0.9; }  /* small doorway mark above the cue - one calm detail */
 .q-back { transform: rotateY(180deg); }
 .q-back img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .question-card:hover .q-face { box-shadow: 0 4px 9px rgba(35, 26, 14, 0.12), 0 26px 56px rgba(35, 26, 14, 0.2); }
@@ -1076,7 +1076,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 560px) { .questions-grid { grid-template-columns: 1fr; gap: 30px; } }
 
 /* ============================================================
-   QUOTES WORTH KEEPING — a daily draw + a deck of flip cards.
+   QUOTES WORTH KEEPING - a daily draw + a deck of flip cards.
    Reuses the Questions flip mechanics (.question-card / .q-*);
    the back face is a typographic quote card instead of a photo.
    ============================================================ */
@@ -1088,16 +1088,16 @@ img { max-width: 100%; display: block; }
   color: var(--archive); text-transform: uppercase;
   margin: 0 0 clamp(24px, 4vh, 40px);
 }
-/* Typographic back face — warm card, quote in Butler + attribution. */
+/* Typographic back face - warm card, quote in Butler + attribution. */
 .q-back--quote {
-  /* old vintage parchment — deeper aged tone so the scroll stands off the cream page;
+  /* old vintage parchment - deeper aged tone so the scroll stands off the cream page;
      darker at the very top/bottom where it rolls */
   background: linear-gradient(180deg, #D6C596 0%, #E6D8B0 9%, #EADFBA 50%, #E6D8B0 91%, #D6C596 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; gap: 20px;
   padding: clamp(46px, 15%, 66px) clamp(26px, 9%, 44px);   /* room for the rolls top & bottom */
 }
-/* Rolled ends of the scroll — a darker parchment cylinder catching light in the middle. */
+/* Rolled ends of the scroll - a darker parchment cylinder catching light in the middle. */
 .q-back--quote::before, .q-back--quote::after {
   content: ''; position: absolute; left: 0; right: 0; height: 22px; pointer-events: none;
   background: linear-gradient(180deg, #CBB98F 0%, #E4D6B4 16%, #D6C49C 54%, #B7A279 100%);
@@ -1111,7 +1111,7 @@ img { max-width: 100%; display: block; }
 }
 .q-cite { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--archive); }
 .q-cite::before { content: '-\00a0'; }
-/* Today card front — a decorative quotation mark instead of a numeral. */
+/* Today card front - a decorative quotation mark instead of a numeral. */
 .q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--stone); }
 /* Small quotation-/question-mark motif inside a reveal card, in the collection accent. */
 .q-glyph { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 3.8vw, 40px); line-height: 0.5; color: var(--accent); }
@@ -1135,7 +1135,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.006em; color: var(--seal);
 }
 
-/* Homepage — "The Collection" doors (5 quiet sibling entry points) */
+/* Homepage - "The Collection" doors (5 quiet sibling entry points) */
 .collection-doors { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; padding: 0 var(--gut); }
 .collection-door {
   display: block;
@@ -1145,12 +1145,12 @@ img { max-width: 100%; display: block; }
   color: inherit;
 }
 .collection-doors .collection-door:last-child { border-bottom: 1px solid rgba(122, 111, 88, 0.24); }
-.collections .display { font-weight: 700; }  /* "The Collection" — Bold section masthead, matching the category-page titles */
-.latest .display { font-weight: 500; }        /* featured story headline — semibold, same as the story heads */
+.collections .display { font-weight: 700; }  /* "The Collection" - Bold section masthead, matching the category-page titles */
+.latest .display { font-weight: 500; }        /* featured story headline - semibold, same as the story heads */
 .collection-door-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; }
 .collection-door-title {
   font-family: var(--serif);
-  font-weight: 500;              /* Butler Medium semibold — matches the Story card heads; lighter than the Bold section title */
+  font-weight: 500;              /* Butler Medium semibold - matches the Story card heads; lighter than the Bold section title */
   font-size: clamp(23px, 3vw, 34px);
   color: var(--ink);
   margin: 0;
@@ -1180,7 +1180,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   ENTRY PAGE — single template reused by every category
+   ENTRY PAGE - single template reused by every category
    ============================================================ */
 
 .entry-crumb {
@@ -1213,7 +1213,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   margin: 0 0 18px;
 }
-.entry-head .display { margin: 0 0 14px; font-weight: 700; }  /* article title — Bold masthead, heavier than the semibold section heads */
+.entry-head .display { margin: 0 0 14px; font-weight: 700; }  /* article title - Bold masthead, heavier than the semibold section heads */
 .entry-subtitle {
   font-family: var(--text);
   font-style: italic;
@@ -1260,16 +1260,16 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   margin: 0 0 10px;
 }
-.entry-takeaway p { font-family: var(--text); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--seal); margin: 0; }  /* highlighted takeaway — larger than body (desktop bumped to 22px below) */
+.entry-takeaway p { font-family: var(--text); font-style: italic; font-size: 20px; line-height: 1.5; color: var(--seal); margin: 0; }  /* highlighted takeaway - larger than body (desktop bumped to 22px below) */
 
 .entry-body { position: relative; z-index: 3; max-width: 780px; margin: 0 auto; padding: 0 var(--gut) clamp(60px, 8vh, 100px); }
-.entry-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); margin: 0 0 20px; line-height: 1.2; }  /* semibold (was default 700) — lighter than the article title */
-.entry-body p { font-family: var(--text); font-size: 18px; line-height: 1.8; color: #33302A; max-width: 65ch; margin: 0 0 22px; }  /* deep warm brown — darker & more readable, sits in the drop-cap's earth family */
+.entry-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); color: var(--ink); margin: 0 0 20px; line-height: 1.2; }  /* semibold (was default 700) - lighter than the article title */
+.entry-body p { font-family: var(--text); font-size: 18px; line-height: 1.8; color: #33302A; max-width: 65ch; margin: 0 0 22px; }  /* deep warm brown - darker & more readable, sits in the drop-cap's earth family */
 /* Legacy class from the placeholder era; entries filled with real prose in a
    single block still use it. Render as normal body text and honour the blank
    lines between paragraphs (pre-line collapses stray indentation but keeps
    the line breaks) so the copy no longer reads as one italic wall. */
-.entry-body p.placeholder-copy { white-space: normal; }  /* flow as prose — one-sentence-per-line source was wrapping into rivers on narrow screens */
+.entry-body p.placeholder-copy { white-space: normal; }  /* flow as prose - one-sentence-per-line source was wrapping into rivers on narrow screens */
 .entry-body figure.plate { max-width: 560px; margin: 34px auto; aspect-ratio: 4/3; }
 
 .entry-related {
@@ -1298,7 +1298,7 @@ img { max-width: 100%; display: block; }
 .entry-related-list a:hover { color: var(--seal); padding-left: 8px; }
 
 /* ============================================================
-   ARCHIVE SIGNATURE — accession numbering + reading refinements.
+   ARCHIVE SIGNATURE - accession numbering + reading refinements.
    Amplifies the catalogue motif already in the nav (roman numerals)
    and the question cards ("No. 03") across the listing grids and the
    long-form entries. Pure CSS: no per-page markup, easy to revert.
@@ -1317,7 +1317,7 @@ img { max-width: 100%; display: block; }
 
 /* Photo answers the cursor: a slow zoom held inside the frame. */
 .grid-card-plate { overflow: hidden; }
-/* No warm-bloom tint on listing cards — show the photo clean (was distracting). */
+/* No warm-bloom tint on listing cards - show the photo clean (was distracting). */
 .grid-card-plate::after { display: none; }
 .grid-card-plate img { transition: transform 900ms cubic-bezier(.19,.7,.2,1); will-change: transform; }
 .grid-card:hover .grid-card-plate img { transform: scale(1.045); }
@@ -1336,24 +1336,24 @@ img { max-width: 100%; display: block; }
 .entry-body h2 { margin-top: 50px; }
 .entry-body h2:first-child { margin-top: 0; }
 
-/* Drop cap on each section opener — the first paragraph after every heading,
+/* Drop cap on each section opener - the first paragraph after every heading,
    plus any lead paragraph before the first heading. */
 .entry-body > p:first-of-type::first-letter,
 .entry-body h2 + p::first-letter {
   float: left;
   font-family: var(--serif);
-  font-weight: 800;              /* Butler ExtraBold — illuminated initial */
+  font-weight: 800;              /* Butler ExtraBold - illuminated initial */
   font-size: 4.4em;
   line-height: 0.72;
-  padding: 8px 20px 0 0;         /* a little more air after the cap — a narrow "I" was sitting tight to the next letter */
+  padding: 8px 20px 0 0;         /* a little more air after the cap - a narrow "I" was sitting tight to the next letter */
   color: var(--accent);
 }
 
-/* --- Per-collection accent — a muted vintage-earth tint per collection,
+/* --- Per-collection accent - a muted vintage-earth tint per collection,
    applied ONLY to the accession number, hairline and drop cap. Photos and
    body copy are never touched. Set via a data-collection on <body>. --- */
 :root { --accent: var(--seal); }
-/* Per-collection accent + a whisper-tint page background — kept strictly in the
+/* Per-collection accent + a whisper-tint page background - kept strictly in the
    warm beige/brown family so the whole site stays "time paused" warm and reads as
    one building. Each hall's Paper shifts a few points toward its own earth tone:
    felt more than seen. --page-bg drives the body; category heroes are transparent
@@ -1480,7 +1480,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .collection-door-row { flex-direction: row; align-items: baseline; flex-wrap: nowrap; gap: 16px; }
   .collection-door-arrow { font-size: 0; letter-spacing: 0; }
   .collection-door-arrow::after { content: '\2192'; font-size: 16px; }
-  /* the "Coming soon" pill can't shrink like the arrow — keep it stacked below its title */
+  /* the "Coming soon" pill can't shrink like the arrow - keep it stacked below its title */
   .collection-door--soon .collection-door-row { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
@@ -1495,7 +1495,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
 
   .editorial-grid { grid-template-columns: 1fr; gap: 44px; }
   .grid-card, .grid-card--wide { grid-column: span 1; }
-  /* Bigger, more present tiles on phones — taller 4:3 image (was wide 16:9), Vogue-scale */
+  /* Bigger, more present tiles on phones - taller 4:3 image (was wide 16:9), Vogue-scale */
   .grid-card-plate, .grid-card--wide .grid-card-plate { aspect-ratio: 4 / 3; margin-bottom: 20px; }
   .entry-crumb { padding-top: 96px; }
 
@@ -1511,7 +1511,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
 }
 
 /* ============================================================
-   COMING SOON — standalone splash page (dark, matches .closing/.site-footer)
+   COMING SOON - standalone splash page (dark, matches .closing/.site-footer)
    ============================================================ */
 
 .soon {
@@ -1532,7 +1532,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
 .soon-seal { margin-top: 54px; }
 .soon-copyright { margin-top: 24px; }
 
-/* Light-on-dark pull-quote and CTA — same --light pattern as .eyebrow--light,
+/* Light-on-dark pull-quote and CTA - same --light pattern as .eyebrow--light,
    .body--light, .rule--light, .display--light used in .closing/.site-footer */
 .pull--light { color: var(--paper); }
 .pull--light em { color: var(--stone); }
@@ -1553,12 +1553,12 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
      then balance the photography against them below. Mobile (<901px) keeps
      its own smaller clamp minimums untouched. ---- */
 
-  /* Hero wordmark — big, but capped so the hero still fits one screen. */
+  /* Hero wordmark - big, but capped so the hero still fits one screen. */
   .hero-title { font-size: clamp(54px, 11vw, 144px); }
 
   /* Category / entry h1s keep their trimmed overrides (not flagged). */
   .category-hero h1.display { font-size: clamp(26px, 4.97vw, 58px); font-weight: 700; }
-  /* Homepage About-section heading ("Why Worth Keeping?") — ~10% smaller than
+  /* Homepage About-section heading ("Why Worth Keeping?") - ~10% smaller than
      the full .display (clamp(46px,9vw,104px)) so the section feels less oversized. */
   #about .about-intro .display { font-size: clamp(41px, 8.1vw, 94px); }
   .entry-head h1.display { font-size: clamp(21px, 4.2vw, 48px); }
@@ -1604,19 +1604,19 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
   .latest-plate img, .panel-plate img { position: absolute; inset: 0; }
   .panel-copy { padding: 64px clamp(48px, 5vw, 72px); }
 
-  /* Full-width desk band under the hero — kept contained. */
+  /* Full-width desk band under the hero - kept contained. */
   .hero-plate { height: clamp(320px, 42vh, 440px); }
 
-  /* Questions band photo — brought closer to its (short) content height. */
+  /* Questions band photo - brought closer to its (short) content height. */
   .interlude-plate { aspect-ratio: 4/3; max-height: 360px; }
 
-  /* Closing photo (begin.jpg, portrait) — keep 4:5, height-capped. */
+  /* Closing photo (begin.jpg, portrait) - keep 4:5, height-capped. */
   .closing-plate { max-height: 560px; }
 
   /* "What deserves to last?" manifesto ran ~90px past one screen (135px
      top+bottom padding + a tall copy column). Keep the big heading but trim
-     the section padding and internal spacing so the whole thing — down to
-     "THE ONES THAT LEAVE SOMETHING BEHIND" — fits one screen. */
+     the section padding and internal spacing so the whole thing - down to
+     "THE ONES THAT LEAVE SOMETHING BEHIND" - fits one screen. */
   .spread--manifesto { padding-top: 70px; padding-bottom: 70px; }
   .spread--manifesto .display { font-size: clamp(44px, 6vw, 90px); } /* the tall 3-line heading, trimmed to help it fit */
   .spread--manifesto .rule--left { margin-top: 22px; margin-bottom: 22px; }
@@ -1629,7 +1629,7 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
    sepia print) becomes a full-width banner at the top that fades into the cream,
    with the centred text below it. The left book panel is hidden. The frame turns
    into a flex column and the right panel goes back into normal flow (position
-   relative, so its ::after fade stays inside it) — this lets it sit flush at the
+   relative, so its ::after fade stays inside it) - this lets it sit flush at the
    top full-bleed, with the text pulled up to overlap its faded lower edge. */
 @media (max-width: 900px) {
   /* One visible screen (svh accounts for the mobile toolbar): photo banner on
@@ -1670,24 +1670,24 @@ body[data-collection="questions"]   { --accent: #a0623c; --page-bg: #F5EEE3; } /
    page reads as distinct movements rather than one long cream field. Hero stays
    the base cream; interlude + "What We Share" keep their existing sand. Bands
    bleed full width (the Latest card is un-capped and re-centred with padding). */
-.spread--manifesto { background: #E9E0CD; }        /* What deserves to last — sand   */
+.spread--manifesto { background: #E9E0CD; }        /* What deserves to last - sand   */
 .latest {
-  background: #F1EBDE;                              /* The Café That Sold Time — linen */
+  background: #F1EBDE;                              /* The Café That Sold Time - linen */
   max-width: none;
   padding-left:  max(var(--gut), calc((100% - 1200px) / 2));
   padding-right: max(var(--gut), calc((100% - 1200px) / 2));
 }
-.collections { background: #E6DCC7; }              /* Five Ways to Notice — taupe    */
-#about .panel:nth-child(2) { background: #EFE7D4; }/* Our Purpose — soft linen       */
-#about .panel:nth-child(4) { background: #E8DFCC; }/* Our Promise — sand             */
+.collections { background: #E6DCC7; }              /* Five Ways to Notice - taupe    */
+#about .panel:nth-child(2) { background: #EFE7D4; }/* Our Purpose - soft linen       */
+#about .panel:nth-child(4) { background: #E8DFCC; }/* Our Promise - sand             */
 
 /* ---- About PAGE section bands (scoped so they don't touch the homepage) ----
    Each section its own warm shade. Panels are 1=Our Belief, 2=How We Curate,
    3=The Curator; then the Collections directory; hero + closing keep base. */
-body[data-page="about"] .about .panel:nth-child(1) { background: #EFE7D4; } /* Our Belief — linen  */
-body[data-page="about"] .about .panel:nth-child(2) { background: #E9E0CD; } /* How We Curate — sand */
-body[data-page="about"] .about .panel:nth-child(3) { background: #F1EBDE; } /* The Curator — linen  */
-body[data-page="about"] .collections { background: #E6DCC7; }              /* Collections — taupe  */
+body[data-page="about"] .about .panel:nth-child(1) { background: #EFE7D4; } /* Our Belief - linen  */
+body[data-page="about"] .about .panel:nth-child(2) { background: #E9E0CD; } /* How We Curate - sand */
+body[data-page="about"] .about .panel:nth-child(3) { background: #F1EBDE; } /* The Curator - linen  */
+body[data-page="about"] .collections { background: #E6DCC7; }              /* Collections - taupe  */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

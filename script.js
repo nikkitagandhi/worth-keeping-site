@@ -121,7 +121,7 @@
     });
   });
 
-  /* ---------- Newsletter (submits to Formspree — see index.html for setup) ---------- */
+  /* ---------- Newsletter (submits to Formspree - see index.html for setup) ---------- */
   const signup = document.querySelector('[data-signup]');
   const note = document.querySelector('[data-signup-note]');
   const signupButton = signup.querySelector('button[type="submit"]');
@@ -136,7 +136,7 @@
       return;
     }
     if (signup.action.includes('YOUR_FORM_ID')) {
-      note.textContent = 'Signup isn’t connected yet — set up Formspree in index.html.';
+      note.textContent = 'Signup isn’t connected yet - set up Formspree in index.html.';
       return;
     }
 
@@ -153,13 +153,13 @@
       });
       if (response.ok) {
         input.value = '';
-        note.textContent = 'Thank you — something worth opening is on its way.';
+        note.textContent = 'Thank you - something worth opening is on its way.';
       } else {
         const data = await response.json().catch(() => null);
-        note.textContent = data?.errors?.[0]?.message || 'Something went wrong — please try again.';
+        note.textContent = data?.errors?.[0]?.message || 'Something went wrong - please try again.';
       }
     } catch {
-      note.textContent = 'Network error — please try again.';
+      note.textContent = 'Network error - please try again.';
     } finally {
       signupButton.disabled = false;
       signupButton.textContent = originalLabel;
