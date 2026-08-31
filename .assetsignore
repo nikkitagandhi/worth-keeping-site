@@ -27,3 +27,7 @@ assets/thoughtful.jpg
 # Butler demo files (the @font-face lives in styles.css; only the .woff files ship).
 font/example.html
 font/style.css
+
+# IndexNow helper + local key record (the <key>.txt file itself stays public).
+indexnow.sh
+.indexnow-key
