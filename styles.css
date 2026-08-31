@@ -220,7 +220,7 @@ img { max-width: 100%; display: block; }
 .cta--sm { font-size: 10.5px; letter-spacing: 0.22em; gap: 10px; }
 .cta--sm svg { width: 26px; }
 /* Passive "scroll" cue (not a link) — a quiet label with a gently bobbing down-arrow. */
-.cta--scroll { color: var(--archive); cursor: default; border-bottom: 0; padding-bottom: 0; gap: 11px; }
+.cta--scroll { flex-direction: column; gap: 10px; color: var(--archive); cursor: default; border-bottom: 0; padding-bottom: 0; }
 .cta--scroll svg { width: 8px; height: 24px; }
 .cta--scroll:hover { color: var(--archive); }
 .cta--scroll:hover svg { transform: none; }
@@ -1110,9 +1110,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.006em; color: var(--seal);
 }
 .q-cite { font-family: var(--sans); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--archive); }
-.q-cite::before { content: '\2014\00a0'; }
+.q-cite::before { content: '-\00a0'; }
 /* Today card front — a decorative quotation mark instead of a numeral. */
 .q-mark { font-family: var(--serif); font-weight: 300; font-size: clamp(96px, 13vw, 148px); line-height: 0.62; color: var(--stone); }
+/* Small quotation-/question-mark motif inside a reveal card, in the collection accent. */
+.q-glyph { font-family: var(--serif); font-weight: 300; font-size: clamp(30px, 3.8vw, 40px); line-height: 0.5; color: var(--accent); }
 
 /* ---- Questions: text-card reveal, deliberately distinct from Quotes ----
    Rosier card, a larger prompt, a terracotta accent rule above, no attribution. */
