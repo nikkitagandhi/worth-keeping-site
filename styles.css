@@ -1171,6 +1171,11 @@ img { max-width: 100%; display: block; }
 }
 .journal-entry a:hover { padding-left: 10px; }
 .journal-entry a:hover .journal-name { color: var(--seal); }
+/* Homepage invitation into the Journal. */
+.journal-invite { position: relative; z-index: 3; text-align: center; max-width: 720px; margin: 0 auto; padding: clamp(72px, 12vh, 130px) var(--gut); }
+.journal-invite .display { margin-bottom: 20px; }
+.journal-invite .body { margin: 0 auto 22px; }
+.journal-invite .cta { justify-content: center; }
 @media (max-width: 560px) {
   .journal-entry a { flex-direction: column; gap: 6px; padding: 22px 0; }
 }
