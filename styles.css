@@ -985,7 +985,25 @@ img { max-width: 100%; display: block; }
   text-wrap: balance;            /* even line lengths on multi-line card headlines */
   transition: color .4s var(--ease);
 }
+.grid-card-title .grid-card-name {  /* recognizable name overline on listing cards (mirrors the article head + Journal) */
+  display: block;
+  font-weight: 500;
+  font-size: clamp(13px, 1.4vw, 15.5px);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--seal);
+  margin: 0 0 5px;
+}
 .grid-card:hover .grid-card-title { color: var(--seal); }
+.feature-name {  /* recognizable name overline on the homepage Today's Pick */
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(16px, 1.8vw, 21px);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--seal);
+  margin: 0 0 6px;
+}
 
 /* Placeholder plate - used where real photography hasn't been shot yet */
 .plate-placeholder {
@@ -1269,6 +1287,16 @@ img { max-width: 100%; display: block; }
   margin: 0 0 18px;
 }
 .entry-head .display { margin: 0 0 14px; font-weight: 700; }  /* article title - Bold masthead, heavier than the semibold section heads */
+.entry-head .display .entry-name {  /* recognizable name as an overline anchor above the headline (mirrors the Journal) */
+  display: block;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(15px, 2.1vw, 20px);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--seal);
+  margin: 0 0 8px;
+}
 .entry-subtitle {
   font-family: var(--text);
   font-style: italic;
