@@ -1171,11 +1171,21 @@ img { max-width: 100%; display: block; }
 }
 .journal-entry a:hover { padding-left: 10px; }
 .journal-entry a:hover .journal-name { color: var(--seal); }
-/* Homepage invitation into the Journal. */
-.journal-invite { position: relative; z-index: 3; text-align: center; max-width: 720px; margin: 0 auto; padding: clamp(72px, 12vh, 130px) var(--gut); }
-.journal-invite .display { margin-bottom: 20px; }
-.journal-invite .body { margin: 0 auto 22px; }
-.journal-invite .cta { justify-content: center; }
+/* Homepage invitation into the Journal - image + copy, two columns. */
+.journal-invite {
+  position: relative; z-index: 3;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  gap: clamp(30px, 6vw, 80px); padding: clamp(60px, 10vh, 120px) var(--gut);
+  max-width: 1400px; margin: 0 auto;
+}
+.journal-invite-plate { aspect-ratio: 4/5; overflow: hidden; border-radius: 2px; }
+.journal-invite-plate img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.journal-invite-copy .display { margin-bottom: 18px; }
+.journal-invite-copy .body { margin-bottom: 24px; max-width: 42ch; }
+@media (max-width: 900px) {
+  .journal-invite { grid-template-columns: 1fr; gap: 32px; padding: clamp(50px, 8vh, 84px) var(--gut); }
+  .journal-invite-plate { aspect-ratio: 16/10; }
+}
 @media (max-width: 560px) {
   .journal-entry a { flex-direction: column; gap: 6px; padding: 22px 0; }
 }
