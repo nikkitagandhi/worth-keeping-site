@@ -1139,6 +1139,37 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.006em; color: var(--seal);
 }
 
+/* ============================================================
+   JOURNAL - a chronicle of the archive, dated by the year of the
+   history itself. A diary/ledger: the year, then the title in script.
+   ============================================================ */
+:root { --script: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive; }
+.journal { position: relative; z-index: 3; max-width: 780px; margin: 0 auto; padding: 0 var(--gut) clamp(90px, 14vh, 160px); }
+.journal-list { list-style: none; margin: 0; padding: 0; }
+.journal-entry a {
+  display: flex; align-items: baseline; gap: clamp(18px, 4vw, 54px);
+  text-decoration: none; padding: clamp(18px, 3vh, 30px) 0;
+  border-top: 1px solid rgba(122, 111, 88, 0.16);
+  transition: padding-left .4s var(--ease);
+}
+.journal-entry:first-child a { border-top: 0; }
+.journal-year {
+  flex: 0 0 auto; width: 4.5ch;
+  font-family: var(--sans); font-size: clamp(13px, 1.3vw, 15px);
+  letter-spacing: 0.12em; color: var(--archive);
+}
+.journal-title {
+  flex: 1 1 auto;
+  font-family: var(--script); font-weight: 400;
+  font-size: clamp(31px, 4.6vw, 50px); line-height: 1.16; color: var(--ink);
+  transition: color .4s var(--ease);
+}
+.journal-entry a:hover { padding-left: 10px; }
+.journal-entry a:hover .journal-title { color: var(--seal); }
+@media (max-width: 560px) {
+  .journal-entry a { flex-direction: column; gap: 5px; padding: 22px 0; }
+}
+
 /* Homepage - "The Collection" doors (5 quiet sibling entry points) */
 .collection-doors { position: relative; z-index: 3; max-width: 900px; margin: 0 auto; padding: 0 var(--gut); }
 .collection-door {

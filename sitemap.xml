@@ -13,6 +13,12 @@
   </url>
 
   <url>
+    <loc>https://worthkeeping.info/journal/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://worthkeeping.info/story/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
