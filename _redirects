@@ -15,4 +15,9 @@
 # full working version.
 #
 # coming-soon.html is left in place (unlinked) so the gate can be
-# restored without rebuilding it.
+# restored without rebuilding it. While the site is live, the old
+# pre-launch URL 301s to home so the stale "Launching Soon" page is
+# never served or indexed. To restore the gate later, remove these two
+# rules (and add the catch-all rewrite described above).
+/coming-soon        /   301
+/coming-soon.html   /   301
