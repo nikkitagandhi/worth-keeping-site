@@ -73,7 +73,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/font/Butler_Light.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Prata&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Prata&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -165,11 +168,11 @@
 
     <div class="collage collage--manifesto">
       <figure class="plate plate--polaroid r-3" data-parallax="0.12" data-reveal>
-        <img src="assets/photos/trunk.webp" alt="A weathered leather travelling trunk marked 1942">
+        <img src="assets/photos/trunk.webp" alt="A weathered leather travelling trunk marked 1942" loading="lazy">
         <figcaption>An object that outlived its owner</figcaption>
       </figure>
       <figure class="plate plate--photo r--2" data-parallax="0.20" data-reveal data-delay="2">
-        <img src="assets/photos/cafe-de-flore.webp" alt="The Café de Flore storefront in Paris">
+        <img src="assets/photos/cafe-de-flore.webp" alt="The Café de Flore storefront in Paris" loading="lazy">
       </figure>
       <div class="notecard r-4" data-parallax="0.26" data-reveal data-delay="3">
         <div class="clip" aria-hidden="true"></div>
@@ -195,7 +198,7 @@
       </a>
     </div>
     <figure class="latest-plate" data-reveal data-delay="1">
-      <img id="feature-img" src="assets/photos/cafe-that-sold-time.webp" alt="The Parisian Café That Sold Time" data-parallax="0.08">
+      <img id="feature-img" src="assets/photos/cafe-that-sold-time.webp" alt="The Parisian Café That Sold Time" data-parallax="0.08" loading="lazy">
     </figure>
   </section>
 
