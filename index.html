@@ -38,13 +38,14 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebSite",
-      "@id": "https://worthkeeping.info/#website",
-      "url": "https://worthkeeping.info/",
+      "@type": "Organization",
+      "@id": "https://worthkeeping.info/#organization",
       "name": "Worth Keeping",
+      "url": "https://worthkeeping.info/",
       "description": "A curated archive dedicated to preserving the stories, places, objects, design, and ideas that deserve to last.",
-      "inLanguage": "en",
-      "publisher": { "@id": "https://worthkeeping.info/#person" }
+      "logo": { "@type": "ImageObject", "url": "https://worthkeeping.info/assets/og-image.jpg" },
+      "sameAs": ["https://www.instagram.com/worthkeeping.info"],
+      "founder": { "@id": "https://worthkeeping.info/#person" }
     },
     {
       "@type": "Person",
@@ -52,6 +53,15 @@
       "name": "Nikita Gandhi",
       "url": "https://worthkeeping.info/",
       "sameAs": ["https://www.instagram.com/worthkeeping.info"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://worthkeeping.info/#website",
+      "url": "https://worthkeeping.info/",
+      "name": "Worth Keeping",
+      "description": "A curated archive dedicated to preserving the stories, places, objects, design, and ideas that deserve to last.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://worthkeeping.info/#organization" }
     }
   ]
 }
